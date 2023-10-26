@@ -17,22 +17,22 @@ class HomeView: UIView {
     lazy var sectionNameLabel: UILabel = {
         let label = UILabel()
         return label
-    }
+    }()
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         return searchBar
-    }
+    }()
     
     lazy var filterCollectionView: UICollectionView = {
         let collectionView = UICollectionView()
         return collectionView
-    }
+    }()
     
     lazy var productsTableView: UITableView = {
         let tableView = UITableView()
         return tableView
-    }
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
