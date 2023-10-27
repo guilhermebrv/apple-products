@@ -8,9 +8,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    private var screen: HomeView?
+    
+    override func loadView() {
+        screen = HomeView()
+        screen?.backgroundColor = UIColor.whiteApple
+        view = screen
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
     }
 }
 

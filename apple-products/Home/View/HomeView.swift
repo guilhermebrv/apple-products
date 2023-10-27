@@ -20,7 +20,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Products"
-        label.font = UIFont(name: "SF-Pro-Display-Regular", size: 22)
+        label.font = UIFont(name: "SF-Pro-Display-Regular", size: 85)
         label.textColor = .black
         return label
     }()
@@ -42,7 +42,7 @@ class HomeView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = UIColor.whiteApple
+        collectionView.backgroundColor = .blue //UIColor.whiteApple
         //collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
         return collectionView
     }()
@@ -52,7 +52,7 @@ class HomeView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.whiteApple
+        tableView.backgroundColor = .red //UIColor.whiteApple
         //tableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
         return tableView
     }()
@@ -61,7 +61,6 @@ class HomeView: UIView {
         super.init(frame: frame)
         addElements()
         configConstraints()
-        backgroundColor = UIColor.whiteApple
     }
     
     required init?(coder: NSCoder) {
@@ -79,7 +78,28 @@ class HomeView: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            //
+            logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            logoImageView.heightAnchor.constraint(equalToConstant: 40),
+            logoImageView.widthAnchor.constraint(equalToConstant: 40),
+            
+            sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: 15),
+            sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 15),
+            
+            searchBar.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 20),
+            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            searchBar.heightAnchor.constraint(equalToConstant: 45),
+            
+            filterCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            filterCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            filterCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            filterCollectionView.heightAnchor.constraint(equalToConstant: 60),
+            
+            productsTableView.topAnchor.constraint(equalTo: filterCollectionView.bottomAnchor),
+            productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            productsTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            productsTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
