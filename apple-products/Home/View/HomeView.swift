@@ -27,11 +27,23 @@ class HomeView: UIView {
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.clipsToBounds = true
+        searchBar.layer.cornerRadius = 20
+        searchBar.searchTextField.borderStyle = .none
+        searchBar.placeholder = "Search for a product:"
         return searchBar
     }()
     
     lazy var filterCollectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        //collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = UIColor.whiteApple
         return collectionView
     }()
     
@@ -43,7 +55,7 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
-        backgroundColor = UIColor(red: 245, green: 245, blue: 247, alpha: 1)
+        backgroundColor = UIColor.whiteApple
     }
     
     required init?(coder: NSCoder) {
