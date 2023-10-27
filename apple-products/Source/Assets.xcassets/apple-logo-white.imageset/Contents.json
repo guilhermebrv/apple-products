@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "black-n-white-apple-logo-png-clipart.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "black-n-white-apple-logo-png-clipart@2x.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "black-n-white-apple-logo-png-clipart@3x.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

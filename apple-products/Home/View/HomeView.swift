@@ -11,11 +11,17 @@ class HomeView: UIView {
 
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "apple-logo-black")
         return imageView
     }()
     
     lazy var sectionNameLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Products"
+        label.font = UIFont(name: "SF-Pro-Display-Regular", size: 22)
+        label.textColor = .black
         return label
     }()
     
@@ -37,6 +43,7 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
+        backgroundColor = UIColor(red: 245, green: 245, blue: 247, alpha: 1)
     }
     
     required init?(coder: NSCoder) {
