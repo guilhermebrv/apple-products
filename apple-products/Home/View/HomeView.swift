@@ -41,20 +41,26 @@ class HomeView: UIView {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        //collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = UIColor.whiteApple
+        //collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
         return collectionView
     }()
     
     lazy var productsTableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.whiteApple
+        //tableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
         return tableView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
+        configConstraints()
         backgroundColor = UIColor.whiteApple
     }
     
@@ -69,5 +75,11 @@ class HomeView: UIView {
         addSubview(filterCollectionView)
         addSubview(productsTableView)
         
+    }
+    
+    private func configConstraints() {
+        NSLayoutConstraint.activate([
+            //
+        ])
     }
 }
