@@ -65,6 +65,11 @@ class HomeView: UIView {
         return tableView
     }()
     
+    public func delegateTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        productsTableView.delegate = delegate
+        productsTableView.dataSource = dataSource
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
