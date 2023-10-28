@@ -20,7 +20,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Products"
-        label.font = UIFont(name: "SF-Pro-Display-Regular", size: 85)
+        label.font = UIFont(name: "SFProDisplay-Regular", size: 32)
         label.textColor = .black
         return label
     }()
@@ -29,6 +29,8 @@ class HomeView: UIView {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.clipsToBounds = true
+        searchBar.backgroundColor = UIColor.grayApple
+        searchBar.barTintColor = UIColor.grayApple
         searchBar.layer.cornerRadius = 20
         searchBar.searchTextField.borderStyle = .none
         searchBar.placeholder = "Search for a product:"
@@ -79,14 +81,14 @@ class HomeView: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            logoImageView.heightAnchor.constraint(equalToConstant: 40),
-            logoImageView.widthAnchor.constraint(equalToConstant: 40),
+            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            logoImageView.heightAnchor.constraint(equalToConstant: 33),
+            logoImageView.widthAnchor.constraint(equalToConstant: 29),
             
-            sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: 15),
+            sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor),
             sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 15),
             
-            searchBar.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 20),
+            searchBar.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 10),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             searchBar.heightAnchor.constraint(equalToConstant: 45),

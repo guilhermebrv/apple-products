@@ -14,8 +14,8 @@
 		2B8495422AE82AFE00473818 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8495412AE82AFE00473818 /* HomeViewController.swift */; };
 		2B8495472AE82B0100473818 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8495462AE82B0100473818 /* Assets.xcassets */; };
 		2B84954A2AE82B0100473818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8495482AE82B0100473818 /* LaunchScreen.storyboard */; };
-		2B9011342AEC35F0005000DD /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B9011332AEC35F0005000DD /* SF-Pro-Display-Regular.otf */; };
 		2B9011392AEC3A08005000DD /* UIColor - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9011382AEC3A08005000DD /* UIColor - Extension.swift */; };
+		2B90113B2AED1F1E005000DD /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B90113A2AED1F1E005000DD /* SF-Pro-Display-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		2B8495462AE82B0100473818 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B8495492AE82B0100473818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B84954B2AE82B0100473818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B9011332AEC35F0005000DD /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		2B9011382AEC3A08005000DD /* UIColor - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor - Extension.swift"; sourceTree = "<group>"; };
+		2B90113A2AED1F1E005000DD /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +96,7 @@
 		2B84953C2AE82AFE00473818 /* apple-products */ = {
 			isa = PBXGroup;
 			children = (
+				2B90113C2AED1FC4005000DD /* Constants */,
 				2B9011352AEC3914005000DD /* Extensions */,
 				2B0E29202AEA68E700C35A79 /* Home */,
 				2B8495622AE9811900473818 /* Source */,
@@ -119,7 +120,7 @@
 		2B9011322AEC35D0005000DD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				2B9011332AEC35F0005000DD /* SF-Pro-Display-Regular.otf */,
+				2B90113A2AED1F1E005000DD /* SF-Pro-Display-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -130,6 +131,13 @@
 				2B9011382AEC3A08005000DD /* UIColor - Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2B90113C2AED1FC4005000DD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B84954A2AE82B0100473818 /* LaunchScreen.storyboard in Resources */,
-				2B9011342AEC35F0005000DD /* SF-Pro-Display-Regular.otf in Resources */,
+				2B90113B2AED1F1E005000DD /* SF-Pro-Display-Regular.otf in Resources */,
 				2B8495472AE82B0100473818 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
