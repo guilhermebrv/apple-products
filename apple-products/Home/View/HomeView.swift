@@ -50,6 +50,11 @@ class HomeView: UIView {
         return collectionView
     }()
     
+    public func delegateCollectionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
+        filterCollectionView.delegate = delegate
+        filterCollectionView.dataSource = dataSource
+    }
+    
     lazy var productsTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,15 +94,15 @@ class HomeView: UIView {
             sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor),
             sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 15),
             
-            searchBar.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 10),
+            searchBar.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 5),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            searchBar.heightAnchor.constraint(equalToConstant: 35),
+            searchBar.heightAnchor.constraint(equalToConstant: 45),
             
             filterCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             filterCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             filterCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            filterCollectionView.heightAnchor.constraint(equalToConstant: 60),
+            filterCollectionView.heightAnchor.constraint(equalToConstant: 50),
             
             productsTableView.topAnchor.constraint(equalTo: filterCollectionView.bottomAnchor),
             productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
