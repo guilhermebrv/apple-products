@@ -32,7 +32,8 @@ class HomeView: UIView {
         searchBar.backgroundColor = UIColor.grayApple
         searchBar.barTintColor = UIColor.grayApple
         searchBar.layer.cornerRadius = 20
-        searchBar.searchTextField.borderStyle = .none
+        searchBar.barStyle = .black
+        searchBar.searchTextField.leftView?.tintColor = .black.withAlphaComponent(0.5)
         searchBar.placeholder = "Search for a product:"
         return searchBar
     }()
@@ -91,7 +92,7 @@ class HomeView: UIView {
             searchBar.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 10),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            searchBar.heightAnchor.constraint(equalToConstant: 45),
+            searchBar.heightAnchor.constraint(equalToConstant: 35),
             
             filterCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             filterCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
