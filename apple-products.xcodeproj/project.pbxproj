@@ -20,6 +20,7 @@
 		2B84954A2AE82B0100473818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8495482AE82B0100473818 /* LaunchScreen.storyboard */; };
 		2B9011392AEC3A08005000DD /* UIColor - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9011382AEC3A08005000DD /* UIColor - Extension.swift */; };
 		2B90113B2AED1F1E005000DD /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B90113A2AED1F1E005000DD /* SF-Pro-Display-Regular.otf */; };
+		2B97655E2AEE86AC000AAB30 /* UIView - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2B84954B2AE82B0100473818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B9011382AEC3A08005000DD /* UIColor - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor - Extension.swift"; sourceTree = "<group>"; };
 		2B90113A2AED1F1E005000DD /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView - Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				2B9011382AEC3A08005000DD /* UIColor - Extension.swift */,
+				2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				2B2E66B52AED8F1100C70F27 /* ProductsTableViewCellView.swift in Sources */,
 				2B8495422AE82AFE00473818 /* HomeViewController.swift in Sources */,
 				2B2E66B12AED8ED900C70F27 /* FilterCollectionViewCellView.swift in Sources */,
+				2B97655E2AEE86AC000AAB30 /* UIView - Extension.swift in Sources */,
 				2B84953E2AE82AFE00473818 /* AppDelegate.swift in Sources */,
 				2B2E66B32AED8EF200C70F27 /* ProductsTableViewCell.swift in Sources */,
 				2B8495402AE82AFE00473818 /* SceneDelegate.swift in Sources */,
