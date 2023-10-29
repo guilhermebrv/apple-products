@@ -19,10 +19,10 @@ class HomeViewModel {
     
 //    MARK: Collection View Protocol
     public var numberOfItemsInSection: Int {
-        return 0 // UPDATE
+        return 6 // UPDATE
     }
     public var sizeForItemAt: CGSize {
-        return CGSize() // UPDATE
+        return CGSize(width: 85, height: 30) // UPDATE
     }
     
     

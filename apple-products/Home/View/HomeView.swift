@@ -41,12 +41,12 @@ class HomeView: UIView {
     lazy var filterCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 15, right: 20)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = .blue //UIColor.whiteApple
-        //collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
+        collectionView.backgroundColor = UIColor.whiteApple
+        collectionView.register(FilterCollectionViewCell.self, forCellWithReuseIdentifier: FilterCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -107,7 +107,7 @@ class HomeView: UIView {
             filterCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             filterCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             filterCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            filterCollectionView.heightAnchor.constraint(equalToConstant: 50),
+            filterCollectionView.heightAnchor.constraint(equalToConstant: 45),
             
             productsTableView.topAnchor.constraint(equalTo: filterCollectionView.bottomAnchor),
             productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),

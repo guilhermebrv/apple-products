@@ -16,8 +16,4 @@ extension UIColor {
     static var grayApple: UIColor {
         return UIColor(red: 240, green: 240, blue: 240, alpha: 1)
     }
-    
-    static var blueApple: UIColor {
-        return UIColor(red: 0, green: 134, blue: 228, alpha: 1)
-    }
 }

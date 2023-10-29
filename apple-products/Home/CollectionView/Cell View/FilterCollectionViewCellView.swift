@@ -11,18 +11,20 @@ class FilterCollectionViewCellView: UIView {
     
     lazy var filterLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Test"
-        label.backgroundColor = .white
-        label.textColor = .blueApple
-        label.layer.borderColor = UIColor.blueApple.cgColor
-        label.layer.borderWidth = 1.5
+        label.text = "Macbook"
+        label.backgroundColor = .systemBlue.withAlphaComponent(0.1)
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont(name: "SFProDisplay-Regular", size: 15)
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 18
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
+        configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -34,9 +36,6 @@ class FilterCollectionViewCellView: UIView {
     }
     
     private func configConstraints() {
-        NSLayoutConstraint.activate([
-            filterLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            filterLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
+        filterLabel.pin(to: self)
     }
 }
