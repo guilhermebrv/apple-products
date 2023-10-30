@@ -11,7 +11,10 @@ class ProductsTableViewCellView: UIView {
     
     lazy var squareView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray.withAlphaComponent(0.2)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .lightGray
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 14
         return view
     }()
     
@@ -19,7 +22,8 @@ class ProductsTableViewCellView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "person.fill") // FOR TESTING
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "macbook") // FOR TESTING
         return imageView
     }()
     
@@ -44,13 +48,14 @@ class ProductsTableViewCellView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "info.circle.fill") // FOR TESTING
+        imageView.tintColor = .lightGray
         return imageView
     }()
     
     lazy var productOptionsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "M2/M2Pro/M2Max Chip"
+        label.text = "M2 • M2 Pro • M2 Max Chip"
         label.font = UIFont(name: "SFProDisplay-Regular", size: 16)
         label.textColor = .darkGray.withAlphaComponent(0.7)
         return label
@@ -76,25 +81,29 @@ class ProductsTableViewCellView: UIView {
     }
     
     private func configConstraints() {
-        squareView.pin(to: self)
         NSLayoutConstraint.activate([
-            productImageView.topAnchor.constraint(equalTo: topAnchor),
-            productImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            productImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            productImageView.heightAnchor.constraint(equalToConstant: 100),
+            squareView.topAnchor.constraint(equalTo: topAnchor),
+            squareView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            squareView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            squareView.heightAnchor.constraint(equalToConstant: 365),
             
-            logoImageView.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 8),
-            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            logoImageView.widthAnchor.constraint(equalToConstant: 29),
-            logoImageView.heightAnchor.constraint(equalToConstant: 33),
+            productImageView.topAnchor.constraint(equalTo: squareView.topAnchor),
+            productImageView.leadingAnchor.constraint(equalTo: squareView.leadingAnchor),
+            productImageView.trailingAnchor.constraint(equalTo: squareView.trailingAnchor),
+            productImageView.heightAnchor.constraint(equalToConstant: 285),
             
-            productLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor),
+            logoImageView.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 12),
+            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            logoImageView.widthAnchor.constraint(equalToConstant: 20),
+            logoImageView.heightAnchor.constraint(equalToConstant: 24),
+            
+            productLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: -2),
             productLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 5),
             
-            infoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            infoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            infoImageView.widthAnchor.constraint(equalToConstant: 15),
-            infoImageView.heightAnchor.constraint(equalToConstant: 15),
+            infoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            infoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            infoImageView.widthAnchor.constraint(equalToConstant: 30),
+            infoImageView.heightAnchor.constraint(equalToConstant: 30),
             
             productOptionsLabel.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 5),
             productOptionsLabel.leadingAnchor.constraint(equalTo: productLabel.leadingAnchor),

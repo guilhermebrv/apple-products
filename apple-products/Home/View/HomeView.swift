@@ -60,8 +60,8 @@ class HomeView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.whiteApple
-        //tableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
+        tableView.backgroundColor = .clear
+        tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: ProductsTableViewCell.identifier)
         return tableView
     }()
     
@@ -110,8 +110,8 @@ class HomeView: UIView {
             filterCollectionView.heightAnchor.constraint(equalToConstant: 55),
             
             productsTableView.topAnchor.constraint(equalTo: filterCollectionView.bottomAnchor),
-            productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            productsTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            productsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             productsTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

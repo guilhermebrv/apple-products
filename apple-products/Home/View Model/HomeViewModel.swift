@@ -11,10 +11,10 @@ class HomeViewModel {
     
 //    MARK: Table View Protocol
     public var numberOfRowsInSection: Int {
-        return 0 // UPDATE
+        return 6 // UPDATE
     }
     public var heightForRowAt: CGFloat {
-        return CGFloat() // UPDATE
+        return 390 // UPDATE
     }
     
 //    MARK: Collection View Protocol
