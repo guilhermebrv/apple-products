@@ -1,0 +1,45 @@
+{
+    
+    "filter_product": [
+        {
+            "title": "All",
+            "id": 0,
+            "isSelected": true
+        },
+        {
+            "title": "Mac",
+            "id": 1,
+            "isSelected": false
+        },
+        {
+            "title": "iPad",
+            "id": 2,
+            "isSelected": false
+        },
+        {
+            "title": "iPhone",
+            "id": 3,
+            "isSelected": false
+        },
+        {
+            "title": "Watch",
+            "id": 4,
+            "isSelected": false
+        },
+        {
+            "title": "Vision",
+            "id": 5,
+            "isSelected": false
+        },
+        {
+            "title": "Watch",
+            "id": 6,
+            "isSelected": false
+        },
+        {
+            "title": "TV & Home",
+            "id": 7,
+            "isSelected": false
+        }
+    ]
+}
