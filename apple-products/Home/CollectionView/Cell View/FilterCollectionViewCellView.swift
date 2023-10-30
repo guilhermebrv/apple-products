@@ -12,7 +12,7 @@ class FilterCollectionViewCellView: UIView {
     lazy var filterLabel: UILabel = {
         let label = UILabel()
         label.text = "Macbook"
-        label.backgroundColor = .systemBlue.withAlphaComponent(0.1)
+        label.backgroundColor = .lightGray.withAlphaComponent(0.1)
         label.textColor = .black
         label.textAlignment = .center
         label.font = UIFont(name: "SFProDisplay-Regular", size: 15)

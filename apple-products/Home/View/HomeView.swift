@@ -60,7 +60,7 @@ class HomeView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .red //UIColor.whiteApple
+        tableView.backgroundColor = UIColor.whiteApple
         //tableView.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
         return tableView
     }()
