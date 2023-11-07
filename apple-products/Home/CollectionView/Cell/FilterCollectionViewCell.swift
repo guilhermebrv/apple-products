@@ -26,5 +26,8 @@ class FilterCollectionViewCell: UICollectionViewCell {
         screen.pin(to: contentView)
     }
     
-//  public func setupCell()
+    public func setupCell(data: FilterProduct) {
+        screen.filterLabel.text = data.title
+        // set up if the cell is currently selected so that it can change its color
+    }
 }

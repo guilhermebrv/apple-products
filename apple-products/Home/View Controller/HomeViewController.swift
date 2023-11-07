@@ -30,6 +30,16 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: HomeViewModelProtocol {
+    func success() {
+        //
+    }
+    
+    func error() {
+        //
+    }
+}
+
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItemsInSection

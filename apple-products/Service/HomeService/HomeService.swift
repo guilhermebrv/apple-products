@@ -36,6 +36,6 @@ class HomeService {
                 completion(nil, error)
             }
         }
+        task.resume()
     }
-    task.resume()
 }

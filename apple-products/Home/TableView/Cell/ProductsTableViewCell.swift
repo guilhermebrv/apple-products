@@ -27,5 +27,15 @@ class ProductsTableViewCell: UITableViewCell {
         backgroundColor = .clear
     }
     
-    // DO IT LATER public func setupCell()
+    public func setupCell(data: ProductsList) {
+        if let urlProduct: URL = URL(string: data.productImage ?? ""), let urlChip: URL = URL(string: data.chipImage ?? "") {
+            URLSession.shared.dataTask(with: urlProduct) { data, response, error in
+                //CONTINUE LATER
+            }
+            //screen.chipImage.image = uiima
+            //screen.productImageView
+        }
+        screen.productLabel.text = data.productName
+        screen.startingPriceLabel.text = data.startingPrice
+    }
 }

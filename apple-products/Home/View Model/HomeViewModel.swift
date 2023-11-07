@@ -7,11 +7,22 @@
 
 import UIKit
 
+protocol HomeViewModelProtocol: AnyObject {
+    func success()
+    func error()
+}
+
 class HomeViewModel {
+    private var productsData: HomeData?
+    private var homeService: HomeService = HomeService()
+    private weak var delegate: HomeViewModelProtocol?
+    public func delegate(delegate: HomeViewModelProtocol) {
+        self.delegate = delegate
+    }
     
 //    MARK: Table View Protocol
     public var numberOfRowsInSection: Int {
-        return 6 // UPDATE
+        return productsData?.productsList?.count ?? 0
     }
     public var heightForRowAt: CGFloat {
         return 390 // UPDATE
@@ -19,11 +30,24 @@ class HomeViewModel {
     
 //    MARK: Collection View Protocol
     public var numberOfItemsInSection: Int {
-        return 6 // UPDATE
+        return productsData?.filterProduct?.count ?? 0
     }
     public var sizeForItemAt: CGSize {
         return CGSize(width: 85, height: 30) // UPDATE
     }
+    
+//    MARK: Fetch Data from Service
+    public func fetchRequest() {
+        homeService.fetchHomeData { result, error in
+            if error == nil {
+                self.productsData = result
+                self.delegate?.success()
+            } else {
+                self.delegate?.error()
+            }
+        }
+    }
+
     
     
 }
