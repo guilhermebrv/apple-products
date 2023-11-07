@@ -23,6 +23,7 @@
 		2B97655E2AEE86AC000AAB30 /* UIView - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */; };
 		2B9765672AF01382000AAB30 /* homeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B9765662AF01382000AAB30 /* homeData.json */; };
 		2B990C2E2AFA686A008E3C70 /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B990C2D2AFA686A008E3C70 /* HomeData.swift */; };
+		2B990C332AFAA78A008E3C70 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B990C322AFAA78A008E3C70 /* HomeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView - Extension.swift"; sourceTree = "<group>"; };
 		2B9765662AF01382000AAB30 /* homeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = homeData.json; sourceTree = "<group>"; };
 		2B990C2D2AFA686A008E3C70 /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
+		2B990C322AFAA78A008E3C70 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,9 +164,11 @@
 		2B84953C2AE82AFE00473818 /* apple-products */ = {
 			isa = PBXGroup;
 			children = (
-				2B9765642AF01366000AAB30 /* Data */,
+				2B990C312AFAA6E8008E3C70 /* Mock */,
+				2B9765642AF01366000AAB30 /* Model */,
 				2B90113C2AED1FC4005000DD /* Constants */,
 				2B9011352AEC3914005000DD /* Extensions */,
+				2B990C2F2AFA9373008E3C70 /* Service */,
 				2B0E29202AEA68E700C35A79 /* Home */,
 				2B8495622AE9811900473818 /* Source */,
 				2B84954B2AE82B0100473818 /* Info.plist */,
@@ -208,21 +212,36 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		2B9765642AF01366000AAB30 /* Data */ = {
+		2B9765642AF01366000AAB30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B9765652AF0136C000AAB30 /* JSON */,
 				2B990C2D2AFA686A008E3C70 /* HomeData.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		2B9765652AF0136C000AAB30 /* JSON */ = {
+		2B990C2F2AFA9373008E3C70 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B990C302AFA9399008E3C70 /* HomeService */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2B990C302AFA9399008E3C70 /* HomeService */ = {
+			isa = PBXGroup;
+			children = (
+				2B990C322AFAA78A008E3C70 /* HomeService.swift */,
+			);
+			path = HomeService;
+			sourceTree = "<group>";
+		};
+		2B990C312AFAA6E8008E3C70 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
 				2B9765662AF01382000AAB30 /* homeData.json */,
 			);
-			path = JSON;
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +324,7 @@
 				2B2E66B32AED8EF200C70F27 /* ProductsTableViewCell.swift in Sources */,
 				2B8495402AE82AFE00473818 /* SceneDelegate.swift in Sources */,
 				2B0E29272AEA692800C35A79 /* HomeView.swift in Sources */,
+				2B990C332AFAA78A008E3C70 /* HomeService.swift in Sources */,
 				2B990C2E2AFA686A008E3C70 /* HomeData.swift in Sources */,
 				2B0E29252AEA691B00C35A79 /* HomeViewModel.swift in Sources */,
 				2B9011392AEC3A08005000DD /* UIColor - Extension.swift in Sources */,
