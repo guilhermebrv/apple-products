@@ -1,5 +1,4 @@
 {
-    
     "filter_product": [
         {
             "title": "All",
@@ -32,7 +31,7 @@
             "isSelected": false
         },
         {
-            "title": "Watch",
+            "title": "Airpods",
             "id": 6,
             "isSelected": false
         },
@@ -40,6 +39,95 @@
             "title": "TV & Home",
             "id": 7,
             "isSelected": false
+        }
+    ],
+    "products_list": [
+        {
+            "product_name": "Macbook Pro 14″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-m3-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562647",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697230830200",
+            "starting_price": "From $1599",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-m3",
+            "type": 1,
+            "more_info": [
+                {
+                    "user_name": "Thomas D. Harrington",
+                    "user_image": "https://i.im.ge/2022/12/19/dGXuRq.user02.png",
+                    "nft_price": 2.4,
+                    "last_access": "2h atrás"
+                },
+                {
+                    "user_name": "Clara G. Natal",
+                    "user_image": "https://i.im.ge/2022/12/19/dGXr9C.user03.png",
+                    "nft_price": 0.8,
+                    "last_access": "5h atrás"
+                }
+            ]
+        },
+        {
+            "product_name": "Macbook Pro 14″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-m3-pro-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562659",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-m3-max-pro-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697230830118",
+            "starting_price": "From $1999",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-m3-pro",
+            "type": 1
+        },
+        {
+            "product_name": "Macbook Pro 14″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-m3-max-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562691",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-m3-max-pro-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697230830118",
+            "starting_price": "From $3199",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-m3-max",
+
+            "type": 1
+        },
+        {
+            "product_name": "Macbook Pro 16″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-m3-pro-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562659",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697311054290",
+            "starting_price": "From $2499",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-m3-pro",
+            "type": 1
+        },
+        {
+            "product_name": "Macbook Pro 16″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-m3-max-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562691",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697311054290",
+            "starting_price": "From $3499",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-m3-max",
+            "type": 1
+        },
+        {
+            "product_name": "Macbook Air 13″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-m1-icon-mac-btr-202306?wid=52&hei=52&fmt=png-alpha&.v=1686159230838",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1664472289661",
+            "starting_price": "From $999",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-m1",
+            "type": 1
+        },
+        {
+            "product_name": "Macbook Air 13″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-m2-icon-mac-btr-202306?wid=52&hei=52&fmt=png-alpha&.v=1684190399345",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1653084303665",
+            "starting_price": "From $1099",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-m2",
+            "type": 1
+        },
+        {
+            "product_name": "Macbook Air 15″",
+            "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-m2-icon-mac-btr-202306?wid=52&hei=52&fmt=png-alpha&.v=1684190399345",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1684518479433",
+            "starting_price": "From $1299",
+            "buy_link": "https://www.apple.com/shop/buy-mac/macbook-air/15-inch-m2",
+            "type": 1
+        },
+        {
+            "product_name": "iPhone 15 Pro",
+            "chip_image": "",
+            "product_image": "https://www.apple.com/iphone-15-pro/",
+            "starting_price": "From $999",
+            "buy_link": "https://www.apple.com/shop/buy-iphone/iphone-15-pro",
+            "type": 3
         }
     ]
 }

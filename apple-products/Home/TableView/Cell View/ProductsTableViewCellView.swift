@@ -37,8 +37,8 @@ class ProductsTableViewCellView: UIView {
     lazy var productLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Macbook Pro"
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 26)
+        label.text = "Macbook Pro 14″"
+        label.font = UIFont(name: "SFProDisplay-Regular", size: 24)
         label.textColor = .black
         return label
     }()
@@ -52,13 +52,21 @@ class ProductsTableViewCellView: UIView {
         return imageView
     }()
     
-    lazy var productOptionsLabel: UILabel = {
+    lazy var startingPriceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "M2 • M2 Pro • M2 Max Chip"
+        label.text = "From "
         label.font = UIFont(name: "SFProDisplay-Regular", size: 16)
         label.textColor = .darkGray.withAlphaComponent(0.7)
         return label
+    }()
+    
+    lazy var chipImage: UIImageView = {
+       let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "m3-max")
+        return imageView
     }()
 
     override init(frame: CGRect) {
@@ -77,7 +85,8 @@ class ProductsTableViewCellView: UIView {
         squareView.addSubview(logoImageView)
         squareView.addSubview(productLabel)
         squareView.addSubview(infoImageView)
-        squareView.addSubview(productOptionsLabel)
+        squareView.addSubview(startingPriceLabel)
+        squareView.addSubview(chipImage)
     }
     
     private func configConstraints() {
@@ -93,9 +102,9 @@ class ProductsTableViewCellView: UIView {
             productImageView.heightAnchor.constraint(equalToConstant: 285),
             
             logoImageView.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 12),
-            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            logoImageView.widthAnchor.constraint(equalToConstant: 20),
-            logoImageView.heightAnchor.constraint(equalToConstant: 24),
+            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            logoImageView.widthAnchor.constraint(equalToConstant: 18),
+            logoImageView.heightAnchor.constraint(equalToConstant: 22),
             
             productLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: -2),
             productLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 5),
@@ -105,8 +114,13 @@ class ProductsTableViewCellView: UIView {
             infoImageView.widthAnchor.constraint(equalToConstant: 30),
             infoImageView.heightAnchor.constraint(equalToConstant: 30),
             
-            productOptionsLabel.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 5),
-            productOptionsLabel.leadingAnchor.constraint(equalTo: productLabel.leadingAnchor),
+            startingPriceLabel.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 2),
+            startingPriceLabel.leadingAnchor.constraint(equalTo: productLabel.leadingAnchor),
+            
+            chipImage.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 17),
+            chipImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            chipImage.widthAnchor.constraint(equalToConstant: 45),
+            chipImage.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
 }
