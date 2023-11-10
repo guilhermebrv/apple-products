@@ -22,17 +22,21 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         signProtocols()
+        viewModel.fetchRequest()
     }
     
     private func signProtocols() {
-        screen?.delegateCollectionView(delegate: self, dataSource: self)
-        screen?.delegateTableView(delegate: self, dataSource: self)
+        viewModel.delegate(delegate: self)
     }
 }
 
 extension HomeViewController: HomeViewModelProtocol {
     func success() {
-        //
+        DispatchQueue.main.async {
+            self.screen?.delegateTableView(delegate: self, dataSource: self)
+            self.screen?.delegateCollectionView(delegate: self, dataSource: self)
+            self.screen?.productsTableView.reloadData()
+        }
     }
     
     func error() {
@@ -64,6 +68,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier, for: indexPath) as? ProductsTableViewCell
+        cell?.setupCell(data: viewModel.loadCurrentTableViewCell(indexPath: indexPath))
         cell?.selectionStyle = .none
         return cell ?? UITableViewCell()
     }

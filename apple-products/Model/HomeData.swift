@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - Welcome
 struct HomeData: Codable {
-    let filterProduct: [FilterProduct]?
-    let productsList: [ProductsList]?
+    var filterProduct: [FilterProduct]?
+    var productsList: [ProductsList]?
 
     enum CodingKeys: String, CodingKey {
         case filterProduct = "filter_product"
@@ -20,19 +20,19 @@ struct HomeData: Codable {
 
 // MARK: - FilterProduct
 struct FilterProduct: Codable {
-    let title: String?
-    let id: Int?
-    let isSelected: Bool?
+    var title: String?
+    var id: Int?
+    var isSelected: Bool?
 }
 
 // MARK: - ProductsList
 struct ProductsList: Codable {
-    let productName: String?
-    let chipImage, productImage: String?
-    let startingPrice: String?
-    let buyLink: String?
-    let type: Int?
-    let moreInfo: [MoreInfo]?
+    var productName: String?
+    var chipImage, productImage: String?
+    var startingPrice: String?
+    var buyLink: String?
+    var type: Int?
+    var moreInfo: [MoreInfo]?
 
     enum CodingKeys: String, CodingKey {
         case productName = "product_name"
@@ -47,10 +47,10 @@ struct ProductsList: Codable {
 
 // MARK: - MoreInfo -                                                          UPDATE WITH ACTUAL INFORMATION
 struct MoreInfo: Codable {
-    let userName: String?
-    let userImage: String?
-    let nftPrice: Double?
-    let lastAccess: String?
+    var userName: String?
+    var userImage: String?
+    var nftPrice: Double?
+    var lastAccess: String?
 
     enum CodingKeys: String, CodingKey {
         case userName = "user_name"

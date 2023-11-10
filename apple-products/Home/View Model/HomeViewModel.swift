@@ -25,12 +25,15 @@ class HomeViewModel {
         return productsData?.productsList?.count ?? 0
     }
     public var heightForRowAt: CGFloat {
-        return 390 // UPDATE
+        return 390
+    }
+    public func loadCurrentTableViewCell(indexPath: IndexPath) -> ProductsList {
+        return productsData?.productsList?[indexPath.row] ?? ProductsList()
     }
     
 //    MARK: Collection View Protocol
     public var numberOfItemsInSection: Int {
-        return productsData?.filterProduct?.count ?? 0
+        return productsData?.filterProduct?.count ?? 5
     }
     public var sizeForItemAt: CGSize {
         return CGSize(width: 85, height: 30) // UPDATE

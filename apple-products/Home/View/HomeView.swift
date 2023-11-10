@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol HomeViewProtocol: AnyObject {
+    func delegateCollectionView()
+    func delegateTableView()
+}
+
 class HomeView: UIView {
 
     lazy var logoImageView: UIImageView = {
@@ -86,7 +91,6 @@ class HomeView: UIView {
         addSubview(searchBar)
         addSubview(filterCollectionView)
         addSubview(productsTableView)
-        
     }
     
     private func configConstraints() {

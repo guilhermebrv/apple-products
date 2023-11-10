@@ -28,12 +28,29 @@ class ProductsTableViewCell: UITableViewCell {
     }
     
     public func setupCell(data: ProductsList) {
-        if let urlProduct: URL = URL(string: data.productImage ?? ""), let urlChip: URL = URL(string: data.chipImage ?? "") {
+        if let urlProduct: URL = URL(string: data.productImage ?? "") {
             URLSession.shared.dataTask(with: urlProduct) { data, response, error in
-                //CONTINUE LATER
+                if let error = error {
+                    return
+                }
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.screen.productImageView.image = image
+                    }
+                }
             }
-            //screen.chipImage.image = uiima
-            //screen.productImageView
+        }
+        if let urlChip: URL = URL(string: data.chipImage ?? "") {
+            URLSession.shared.dataTask(with: urlChip) { data, response, error in
+                if let error = error {
+                    return
+                }
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.screen.chipImage.image = image
+                    }
+                }
+            }
         }
         screen.productLabel.text = data.productName
         screen.startingPriceLabel.text = data.startingPrice
