@@ -33,10 +33,44 @@ class HomeViewModel {
     
 //    MARK: Collection View Protocol
     public var numberOfItemsInSection: Int {
-        return productsData?.filterProduct?.count ?? 5
+        return productsData?.filterProduct?.count ?? 0
     }
     public var sizeForItemAt: CGSize {
-        return CGSize(width: 85, height: 30) // UPDATE
+        return CGSize(width: 100, height: 30)
+    }
+    public func loadCurrentCollectionViewCell(indexPath: IndexPath) -> FilterProduct {
+        return productsData?.filterProduct?[indexPath.row] ?? FilterProduct()
+    }
+    
+//    MARK: Filter Product on Collection View
+    public func setFilter(indexPath: IndexPath) {
+        var filterProduct: [FilterProduct] = []
+        for (index, value) in (productsData?.filterProduct ?? []).enumerated() {
+            var type = value
+            if index == indexPath.row {
+                type.isSelected = true
+            } else {
+                type.isSelected = false
+            }
+            filterProduct.append(type)
+        }
+        productsData?.filterProduct = filterProduct
+    }
+    
+    private var typeFilter: Int? {
+        return productsData?.filterProduct?.first(where: {$0.isSelected == true})?.id
+    }
+    
+    public func filterSearchText(text: String) {
+        var productsList: [ProductsList] = []
+        
+        if typeFilter == 0 {
+            productsList = productsData?.productsList ?? []
+        } else {
+            productsList = productsData?.productsList?.filter({$0.type == typeFilter ?? 0}) ?? []
+        }
+        
+        productsData?.productsList = productsList
     }
     
 //    MARK: Fetch Data from Service

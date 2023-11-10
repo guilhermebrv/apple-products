@@ -51,13 +51,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCollectionViewCell.identifier, for: indexPath) as? FilterCollectionViewCell
-        if indexPath.row == 0 {
-            cell?.screen.filterLabel.backgroundColor = .systemBlue.withAlphaComponent(0.8) // put it in a better place
-        }
+        cell?.setupCell(data: viewModel.loadCurrentCollectionViewCell(indexPath: indexPath))
         return cell ?? UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return viewModel.sizeForItemAt
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.setFilter(indexPath: indexPath)
+        screen?.filterCollectionView.reloadData()
+        screen?.filterCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        screen?.productsTableView.reloadData()
     }
 }
 

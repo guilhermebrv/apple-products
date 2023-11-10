@@ -28,6 +28,10 @@ class FilterCollectionViewCell: UICollectionViewCell {
     
     public func setupCell(data: FilterProduct) {
         screen.filterLabel.text = data.title
-        // set up if the cell is currently selected so that it can change its color
+        if data.isSelected == true {
+            screen.filterLabel.backgroundColor = .systemBlue.withAlphaComponent(0.8)
+        } else {
+            screen.filterLabel.backgroundColor = .lightGray.withAlphaComponent(0.1)
+        }
     }
 }

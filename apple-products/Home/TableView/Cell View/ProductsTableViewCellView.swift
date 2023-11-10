@@ -23,7 +23,7 @@ class ProductsTableViewCellView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "macbook") // FOR TESTING
+        imageView.image = UIImage(named: "apple-bg") // FOR TESTING
         return imageView
     }()
     
@@ -65,7 +65,6 @@ class ProductsTableViewCellView: UIView {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "m3-max")
         return imageView
     }()
 

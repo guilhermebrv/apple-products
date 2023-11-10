@@ -30,7 +30,7 @@ class ProductsTableViewCell: UITableViewCell {
     public func setupCell(data: ProductsList) {
         if let urlProduct: URL = URL(string: data.productImage ?? "") {
             URLSession.shared.dataTask(with: urlProduct) { data, response, error in
-                if let error = error {
+                if error != nil {
                     return
                 }
                 if let data = data, let image = UIImage(data: data) {
@@ -38,11 +38,11 @@ class ProductsTableViewCell: UITableViewCell {
                         self.screen.productImageView.image = image
                     }
                 }
-            }
+            }.resume()
         }
         if let urlChip: URL = URL(string: data.chipImage ?? "") {
             URLSession.shared.dataTask(with: urlChip) { data, response, error in
-                if let error = error {
+                if error != nil {
                     return
                 }
                 if let data = data, let image = UIImage(data: data) {
@@ -50,7 +50,7 @@ class ProductsTableViewCell: UITableViewCell {
                         self.screen.chipImage.image = image
                     }
                 }
-            }
+            }.resume()
         }
         screen.productLabel.text = data.productName
         screen.startingPriceLabel.text = data.startingPrice
