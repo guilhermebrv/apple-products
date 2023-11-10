@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     
     private func signProtocols() {
         viewModel.delegate(delegate: self)
+        screen?.delegateSearchBar(delegate: self)
     }
 }
 
@@ -41,6 +42,13 @@ extension HomeViewController: HomeViewModelProtocol {
     
     func error() {
         //
+    }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterSearchText(text: searchText)
+        screen?.productsTableView.reloadData()
     }
 }
 
@@ -62,6 +70,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         screen?.filterCollectionView.reloadData()
         screen?.filterCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         screen?.productsTableView.reloadData()
+        if viewModel.numberOfRowsInSection > 0 {
+            screen?.productsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
     }
 }
 

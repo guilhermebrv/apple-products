@@ -14,6 +14,7 @@ protocol HomeViewModelProtocol: AnyObject {
 
 class HomeViewModel {
     private var productsData: HomeData?
+    private var searchProductsData: HomeData?
     private var homeService: HomeService = HomeService()
     private weak var delegate: HomeViewModelProtocol?
     public func delegate(delegate: HomeViewModelProtocol) {
@@ -65,9 +66,9 @@ class HomeViewModel {
         var productsList: [ProductsList] = []
         
         if typeFilter == 0 {
-            productsList = productsData?.productsList ?? []
+            productsList = searchProductsData?.productsList ?? []
         } else {
-            productsList = productsData?.productsList?.filter({$0.type == typeFilter ?? 0}) ?? []
+            productsList = searchProductsData?.productsList?.filter({$0.type == typeFilter ?? 0}) ?? []
         }
         
         productsData?.productsList = productsList

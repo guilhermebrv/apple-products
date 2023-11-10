@@ -10,6 +10,7 @@ import UIKit
 protocol HomeViewProtocol: AnyObject {
     func delegateCollectionView()
     func delegateTableView()
+    func delegateSearchBar()
 }
 
 class HomeView: UIView {
@@ -42,6 +43,10 @@ class HomeView: UIView {
         searchBar.placeholder = "Search for a product:"
         return searchBar
     }()
+    
+    public func delegateSearchBar(delegate: UISearchBarDelegate) {
+        searchBar.delegate = delegate
+    }
     
     lazy var filterCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
