@@ -44,7 +44,7 @@ class HomeViewModel {
     }
     
 //    MARK: Filter Product on Collection View
-    public func setFilter(indexPath: IndexPath) {
+    public func setFilter(indexPath: IndexPath, searchText: String) {
         var filterProduct: [FilterProduct] = []
         for (index, value) in (productsData?.filterProduct ?? []).enumerated() {
             var type = value
@@ -56,6 +56,7 @@ class HomeViewModel {
             filterProduct.append(type)
         }
         productsData?.filterProduct = filterProduct
+        filterSearchText(text: searchText)
     }
     
     private var typeFilter: Int? {
@@ -64,14 +65,19 @@ class HomeViewModel {
     
     public func filterSearchText(text: String) {
         var productsList: [ProductsList] = []
-        
         if typeFilter == 0 {
             productsList = searchProductsData?.productsList ?? []
         } else {
             productsList = searchProductsData?.productsList?.filter({$0.type == typeFilter ?? 0}) ?? []
         }
         
-        productsData?.productsList = productsList
+        if text.isEmpty == true {
+            productsData?.productsList = productsList
+        } else {
+            productsData?.productsList = productsList.filter({ product in
+                return product.productName?.lowercased().contains(text.lowercased()) ?? false
+            })
+        }
     }
     
 //    MARK: Fetch Data from Service
@@ -79,6 +85,7 @@ class HomeViewModel {
         homeService.fetchHomeData { result, error in
             if error == nil {
                 self.productsData = result
+                self.searchProductsData = result
                 self.delegate?.success()
             } else {
                 self.delegate?.error()

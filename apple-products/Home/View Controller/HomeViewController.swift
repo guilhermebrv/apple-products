@@ -34,8 +34,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewModelProtocol {
     func success() {
         DispatchQueue.main.async {
-            self.screen?.delegateTableView(delegate: self, dataSource: self)
             self.screen?.delegateCollectionView(delegate: self, dataSource: self)
+            self.screen?.delegateTableView(delegate: self, dataSource: self)
             self.screen?.productsTableView.reloadData()
         }
     }
@@ -49,6 +49,10 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filterSearchText(text: searchText)
         screen?.productsTableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
@@ -66,7 +70,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return viewModel.sizeForItemAt
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.setFilter(indexPath: indexPath)
+        viewModel.setFilter(indexPath: indexPath, searchText: screen?.searchBar.text ?? "")
         screen?.filterCollectionView.reloadData()
         screen?.filterCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         screen?.productsTableView.reloadData()

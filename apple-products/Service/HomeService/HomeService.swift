@@ -15,7 +15,7 @@ enum ErrorDetail: Swift.Error {
 class HomeService {
     
     func fetchHomeData(completion: @escaping(HomeData?, Error?) -> Void) {
-        let urlString: String = "https://run.mocky.io/v3/88ee7236-3687-4039-a3bb-a3c313731065"
+        let urlString: String = "https://run.mocky.io/v3/e2a8caaf-f983-487c-b40d-0fccaccf0514"
         guard let url: URL = URL(string: urlString) else { return completion(nil, ErrorDetail.errorURL(urlString: urlString)) }
         
         var request = URLRequest(url: url)
@@ -23,7 +23,6 @@ class HomeService {
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let dataResult = data else { return completion(nil, ErrorDetail.detailError(detail: "Couldn't fetch any data from specified URL")) }
-            //let json = try? JSONSerialization.jsonObject(with: dataResult, options: [])
             guard let response = response as? HTTPURLResponse else { return }
             if response.statusCode == 200 {
                 do {
