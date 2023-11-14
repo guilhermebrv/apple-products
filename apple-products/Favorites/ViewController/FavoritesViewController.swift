@@ -10,6 +10,7 @@ import UIKit
 class FavoritesViewController: UIViewController {
     
     private var screen: FavoritesView?
+    private var viewModel: FavoritesViewModel = FavoritesViewModel()
     
     override func loadView() {
         screen = FavoritesView()
@@ -34,14 +35,16 @@ class FavoritesViewController: UIViewController {
 
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int()
+        return viewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier, for: indexPath) as? ProductsTableViewCell
+        cell?.selectionStyle = .none
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat()
+        return viewModel.heightForRowAt
     }
 }

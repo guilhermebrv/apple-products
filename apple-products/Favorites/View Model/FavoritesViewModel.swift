@@ -8,5 +8,13 @@
 import UIKit
 
 class FavoritesViewModel {
+    
+    public var numberOfRowsInSection: Int {
+        return 1
+    }
+    
+    public var heightForRowAt: CGFloat {
+        return 390
+    }
 
 }
