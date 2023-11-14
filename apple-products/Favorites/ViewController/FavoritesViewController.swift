@@ -8,6 +8,13 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    
+    private var screen: FavoritesView?
+    
+    override func loadView() {
+        screen = FavoritesView()
+        view = screen
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

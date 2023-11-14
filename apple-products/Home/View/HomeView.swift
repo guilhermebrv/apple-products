@@ -26,7 +26,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Products"
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 32)
+        label.font = UIFont(name: "SFProDisplay-Regular", size: 34)
         label.textColor = .black
         return label
     }()
@@ -102,11 +102,11 @@ class HomeView: UIView {
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            logoImageView.heightAnchor.constraint(equalToConstant: 33),
-            logoImageView.widthAnchor.constraint(equalToConstant: 29),
+            logoImageView.heightAnchor.constraint(equalToConstant: 32),
+            logoImageView.widthAnchor.constraint(equalToConstant: 28),
             
-            sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor),
-            sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 15),
+            sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: -2),
+            sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 10),
             
             searchBar.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 5),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
