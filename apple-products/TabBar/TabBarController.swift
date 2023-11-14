@@ -17,5 +17,19 @@ class TabBarController: UITabBarController {
     private func setupTabBar() {
         let products = UINavigationController(rootViewController: HomeViewController())
         let favorites = UINavigationController(rootViewController: FavoritesViewController())
+        setViewControllers([products, favorites], animated: false)
+        
+        let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground()
+        tabBarAppearance.backgroundColor = .lightGray
+        
+        tabBar.isTranslucent = false
+        tabBar.tintColor = .white
+        tabBar.standardAppearance = tabBarAppearance
+        tabBar.scrollEdgeAppearance = tabBarAppearance
+        
+        guard let items = tabBar.items else { return }
+        items[0].image = UIImage(systemName: "magnifyingglass")
+        items[1].image = UIImage(systemName: "star")
     }
 }
