@@ -10,10 +10,14 @@ import UIKit
 
 extension UIColor {
     static var whiteApple: UIColor {
-        return UIColor(red: 245, green: 245, blue: 247, alpha: 1)
+        return UIColor(red: 245/255, green: 245/255, blue: 247/255, alpha: 1)
     }
     
     static var grayApple: UIColor {
-        return UIColor(red: 240, green: 240, blue: 240, alpha: 1)
+        return UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+    }
+    
+    static var blueApple: UIColor {
+        return UIColor(red: 10/255, green: 132/255, blue: 255/255, alpha: 1)
     }
 }

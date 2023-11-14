@@ -29,7 +29,7 @@ class FilterCollectionViewCell: UICollectionViewCell {
     public func setupCell(data: FilterProduct) {
         screen.filterLabel.text = data.title
         if data.isSelected == true {
-            screen.filterLabel.backgroundColor = .systemBlue.withAlphaComponent(0.8)
+            screen.filterLabel.backgroundColor = .blueApple.withAlphaComponent(0.8)
         } else {
             screen.filterLabel.backgroundColor = .lightGray.withAlphaComponent(0.1)
         }
