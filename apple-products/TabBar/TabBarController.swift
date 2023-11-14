@@ -30,6 +30,8 @@ class TabBarController: UITabBarController {
         
         guard let items = tabBar.items else { return }
         items[0].image = UIImage(systemName: "magnifyingglass")
+        items[0].title = "Products"
         items[1].image = UIImage(systemName: "star")
+        items[1].title = "Favorites"
     }
 }
