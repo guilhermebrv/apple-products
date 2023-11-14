@@ -24,6 +24,21 @@ class FavoritesView: UIView {
         label.textColor = .black
         return label
     }()
+    
+    lazy var favoritesTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: ProductsTableViewCell.identifier)
+        return tableView
+    }()
+    
+    public func delegateTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        favoritesTableView.delegate = delegate
+        favoritesTableView.dataSource = dataSource
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +53,7 @@ class FavoritesView: UIView {
     private func addElements() {
         addSubview(logoImageView)
         addSubview(sectionNameLabel)
+        addSubview(favoritesTableView)
     }
     
     private func configConstraints() {
@@ -49,6 +65,11 @@ class FavoritesView: UIView {
             
             sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: -2),
             sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 10),
+            
+            favoritesTableView.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 5),
+            favoritesTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            favoritesTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            favoritesTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 

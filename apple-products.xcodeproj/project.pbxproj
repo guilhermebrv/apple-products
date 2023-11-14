@@ -21,6 +21,7 @@
 		2B8F78202B03983900BCDFDB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F781F2B03983900BCDFDB /* TabBarController.swift */; };
 		2B8F78252B0398C900BCDFDB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F78242B0398C900BCDFDB /* FavoritesViewController.swift */; };
 		2B8F78272B03A9A600BCDFDB /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F78262B03A9A600BCDFDB /* FavoritesView.swift */; };
+		2B8F782A2B03E61600BCDFDB /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F78292B03E61600BCDFDB /* FavoritesViewModel.swift */; };
 		2B9011392AEC3A08005000DD /* UIColor - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9011382AEC3A08005000DD /* UIColor - Extension.swift */; };
 		2B90113B2AED1F1E005000DD /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B90113A2AED1F1E005000DD /* SF-Pro-Display-Regular.otf */; };
 		2B97655E2AEE86AC000AAB30 /* UIView - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */; };
@@ -46,6 +47,7 @@
 		2B8F781F2B03983900BCDFDB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2B8F78242B0398C900BCDFDB /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		2B8F78262B03A9A600BCDFDB /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		2B8F78292B03E61600BCDFDB /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		2B9011382AEC3A08005000DD /* UIColor - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor - Extension.swift"; sourceTree = "<group>"; };
 		2B90113A2AED1F1E005000DD /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView - Extension.swift"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		2B8F78212B0398A600BCDFDB /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				2B8F78282B03E5ED00BCDFDB /* View Model */,
 				2B8F78232B0398B400BCDFDB /* ViewController */,
 				2B8F78222B0398B000BCDFDB /* View */,
 			);
@@ -227,6 +230,14 @@
 				2B8F78242B0398C900BCDFDB /* FavoritesViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2B8F78282B03E5ED00BCDFDB /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B8F78292B03E61600BCDFDB /* FavoritesViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		2B9011322AEC35D0005000DD /* Fonts */ = {
@@ -364,6 +375,7 @@
 				2B84953E2AE82AFE00473818 /* AppDelegate.swift in Sources */,
 				2B2E66B32AED8EF200C70F27 /* ProductsTableViewCell.swift in Sources */,
 				2B8495402AE82AFE00473818 /* SceneDelegate.swift in Sources */,
+				2B8F782A2B03E61600BCDFDB /* FavoritesViewModel.swift in Sources */,
 				2B0E29272AEA692800C35A79 /* HomeView.swift in Sources */,
 				2B990C332AFAA78A008E3C70 /* HomeService.swift in Sources */,
 				2B990C2E2AFA686A008E3C70 /* HomeData.swift in Sources */,
