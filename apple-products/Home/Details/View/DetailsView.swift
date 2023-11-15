@@ -32,7 +32,7 @@ class DetailsView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .red
         //tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: ProductsTableViewCell.identifier)
         return tableView
     }()
@@ -41,6 +41,7 @@ class DetailsView: UIView {
         super.init(frame: frame)
         addElements()
         configConstraints()
+        backgroundColor = .whiteApple
     }
     
     required init?(coder: NSCoder) {
@@ -55,7 +56,16 @@ class DetailsView: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-        
+            productTypeLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            productTypeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            productLabel.topAnchor.constraint(equalTo: productTypeLabel.bottomAnchor),
+            productLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            detailsTableView.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 5),
+            detailsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            detailsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            detailsTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 25)
         ])
     }
 }
