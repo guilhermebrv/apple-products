@@ -38,7 +38,7 @@ class ProductsTableViewCellView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Macbook Pro 14″"
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 24)
+        label.font = UIFont(name: "SFProDisplay-Bold", size: 26)
         label.textColor = .black
         return label
     }()
