@@ -27,6 +27,15 @@ class DetailsView: UIView {
         return label
     }()
     
+    lazy var exitImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(systemName: "xmark.circle.fill") 
+        imageView.tintColor = .lightGray
+        return imageView
+    }()
+    
     lazy var detailsTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,6 +65,7 @@ class DetailsView: UIView {
     private func addElements() {
         addSubview(productTypeLabel)
         addSubview(productLabel)
+        addSubview(exitImageView)
         addSubview(detailsTableView)
     }
     
@@ -66,6 +76,11 @@ class DetailsView: UIView {
             
             productLabel.topAnchor.constraint(equalTo: productTypeLabel.bottomAnchor),
             productLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            exitImageView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            exitImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            exitImageView.widthAnchor.constraint(equalToConstant: 30),
+            exitImageView.heightAnchor.constraint(equalToConstant: 30),
             
             detailsTableView.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 5),
             detailsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),

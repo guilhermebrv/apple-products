@@ -99,6 +99,11 @@ class DetailsTableViewView: UIView {
             squareView.topAnchor.constraint(equalTo: topAnchor),
             squareView.leadingAnchor.constraint(equalTo: leadingAnchor),
             squareView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            productImageView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            productImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            productImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 15),
+            productImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
 
