@@ -88,7 +88,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier, for: indexPath) as? ProductsTableViewCell
         cell?.setupCell(data: viewModel.loadCurrentTableViewCell(indexPath: indexPath))
@@ -99,6 +98,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.heightForRowAt
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
+    }
 }
 
 

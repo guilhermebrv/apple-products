@@ -15,7 +15,7 @@ class FilterCollectionViewCellView: UIView {
         label.backgroundColor = .grayApple
         label.textColor = .black
         label.textAlignment = .center
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 15)
+        label.font = UIFont(name: "SFProDisplay-Bold", size: 15)
         label.clipsToBounds = true
         label.layer.cornerRadius = 18
         return label

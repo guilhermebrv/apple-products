@@ -116,7 +116,7 @@ class HomeView: UIView {
             filterCollectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             filterCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             filterCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            filterCollectionView.heightAnchor.constraint(equalToConstant: 55),
+            filterCollectionView.heightAnchor.constraint(equalToConstant: 65),
             
             productsTableView.topAnchor.constraint(equalTo: filterCollectionView.bottomAnchor),
             productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),

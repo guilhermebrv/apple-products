@@ -37,7 +37,7 @@ class HomeViewModel {
         return productsData?.filterProduct?.count ?? 0
     }
     public var sizeForItemAt: CGSize {
-        return CGSize(width: 100, height: 30)
+        return CGSize(width: 100, height: 35)
     }
     public func loadCurrentCollectionViewCell(indexPath: IndexPath) -> FilterProduct {
         return productsData?.filterProduct?[indexPath.row] ?? FilterProduct()
