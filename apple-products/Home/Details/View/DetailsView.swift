@@ -33,9 +33,14 @@ class DetailsView: UIView {
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.backgroundColor = .red
-        //tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: ProductsTableViewCell.identifier)
+        tableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: DetailsTableViewCell.identifier)
         return tableView
     }()
+    
+    public func delegateTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        detailsTableView.delegate = delegate
+        detailsTableView.dataSource = dataSource
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,7 +70,7 @@ class DetailsView: UIView {
             detailsTableView.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 5),
             detailsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             detailsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            detailsTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 25)
+            detailsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 25)
         ])
     }
 }

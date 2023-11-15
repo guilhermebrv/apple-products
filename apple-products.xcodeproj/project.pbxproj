@@ -32,7 +32,8 @@
 		2BBB1F942B04F08D002D400D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1F932B04F08D002D400D /* DetailsViewController.swift */; };
 		2BBB1F962B04F09A002D400D /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1F952B04F09A002D400D /* DetailsView.swift */; };
 		2BBB1F9C2B0500A7002D400D /* DetailsTableViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1F9B2B0500A7002D400D /* DetailsTableViewView.swift */; };
-		2BBB1FA02B0500FC002D400D /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1F9F2B0500FC002D400D /* DetailsTableViewController.swift */; };
+		2BBB1FA22B0527C9002D400D /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1FA12B0527C9002D400D /* DetailsTableViewCell.swift */; };
+		2BBB1FA52B0528DC002D400D /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +64,8 @@
 		2BBB1F932B04F08D002D400D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2BBB1F952B04F09A002D400D /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		2BBB1F9B2B0500A7002D400D /* DetailsTableViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewView.swift; sourceTree = "<group>"; };
-		2BBB1F9F2B0500FC002D400D /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		2BBB1FA12B0527C9002D400D /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 		2BBB1F902B04F046002D400D /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				2BBB1FA32B0528C6002D400D /* ViewModel */,
 				2BBB1F982B050083002D400D /* TableView */,
 				2BBB1F922B04F052002D400D /* View Controller */,
 				2BBB1F912B04F04E002D400D /* View */,
@@ -354,9 +357,17 @@
 		2BBB1F9A2B050091002D400D /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2BBB1F9F2B0500FC002D400D /* DetailsTableViewController.swift */,
+				2BBB1FA12B0527C9002D400D /* DetailsTableViewCell.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2BBB1FA32B0528C6002D400D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +449,8 @@
 				2B2E66B12AED8ED900C70F27 /* FilterCollectionViewCellView.swift in Sources */,
 				2B97655E2AEE86AC000AAB30 /* UIView - Extension.swift in Sources */,
 				2BBB1F9C2B0500A7002D400D /* DetailsTableViewView.swift in Sources */,
+				2BBB1FA22B0527C9002D400D /* DetailsTableViewCell.swift in Sources */,
+				2BBB1FA52B0528DC002D400D /* DetailsViewModel.swift in Sources */,
 				2B84953E2AE82AFE00473818 /* AppDelegate.swift in Sources */,
 				2B2E66B32AED8EF200C70F27 /* ProductsTableViewCell.swift in Sources */,
 				2B8495402AE82AFE00473818 /* SceneDelegate.swift in Sources */,
@@ -451,7 +464,6 @@
 				2B8F78272B03A9A600BCDFDB /* FavoritesView.swift in Sources */,
 				2B9011392AEC3A08005000DD /* UIColor - Extension.swift in Sources */,
 				2B8F78252B0398C900BCDFDB /* FavoritesViewController.swift in Sources */,
-				2BBB1FA02B0500FC002D400D /* DetailsTableViewController.swift in Sources */,
 				2B2E66AF2AED8EC400C70F27 /* FilterCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

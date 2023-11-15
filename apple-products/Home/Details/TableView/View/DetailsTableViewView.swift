@@ -12,9 +12,9 @@ class DetailsTableViewView: UIView {
     lazy var squareView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .grayApple
         view.clipsToBounds = true
-        view.layer.cornerRadius = 14
+        view.layer.cornerRadius = 20
         return view
     }()
     
@@ -96,7 +96,9 @@ class DetailsTableViewView: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-        
+            squareView.topAnchor.constraint(equalTo: topAnchor),
+            squareView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            squareView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
 
