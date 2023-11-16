@@ -12,7 +12,7 @@ class ProductsTableViewCellView: UIView {
     lazy var squareView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .lightGray.withAlphaComponent(0.5)
         view.clipsToBounds = true
         view.layer.cornerRadius = 14
         return view
@@ -48,7 +48,7 @@ class ProductsTableViewCellView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "info.circle.fill") // FOR TESTING
-        imageView.tintColor = .lightGray
+        imageView.tintColor = .lightGray.withAlphaComponent(0.5)
         return imageView
     }()
     

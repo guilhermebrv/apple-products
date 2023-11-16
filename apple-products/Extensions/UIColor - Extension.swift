@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     static var whiteApple: UIColor {
-        return UIColor(red: 245/255, green: 245/255, blue: 247/255, alpha: 1)
+        return UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     }
     
     static var grayApple: UIColor {

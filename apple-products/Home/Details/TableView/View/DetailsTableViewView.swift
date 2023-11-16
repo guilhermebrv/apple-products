@@ -12,7 +12,7 @@ class DetailsTableViewView: UIView {
     lazy var squareView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .grayApple
         view.clipsToBounds = true
         view.layer.cornerRadius = 16
         return view
@@ -44,7 +44,7 @@ class DetailsTableViewView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Macbook Pro 14″"
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 26)
+        label.font = UIFont(name: "SFProDisplay-Bold", size: 28)
         label.textColor = .black
         return label
     }()
@@ -53,7 +53,7 @@ class DetailsTableViewView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Macbook Pro 14″"
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 26)
+        label.font = UIFont(name: "SFProDisplay-Regular", size: 18)
         label.textColor = .black
         return label
     }()
@@ -61,7 +61,7 @@ class DetailsTableViewView: UIView {
     lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Macbook Pro 14″"
+        label.text = "$3,199.00"
         label.font = UIFont(name: "SFProDisplay-Bold", size: 26)
         label.textColor = .black
         return label
@@ -73,6 +73,16 @@ class DetailsTableViewView: UIView {
         button.configuration?.title = "Buy on website"
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont(name: "SFProDisplay-Regular", size: 19)
+        return button
+    }()
+    
+    lazy var addToFavoritesButton: UIButton = {
+        let button = UIButton()
+        button.configuration = .plain()
+        button.configuration?.image = UIImage(systemName: "star")
+        button.configuration?.title = "Add to favorites"
+        button.configuration?.buttonSize = .small
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -95,6 +105,7 @@ class DetailsTableViewView: UIView {
         squareView.addSubview(detailedSpecsLabel)
         squareView.addSubview(priceLabel)
         squareView.addSubview(buyButton)
+        squareView.addSubview(addToFavoritesButton)
     }
     
     private func configConstraints() {
@@ -129,10 +140,13 @@ class DetailsTableViewView: UIView {
             priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            buyButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 25),
+            buyButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 20),
             buyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             buyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            buyButton.heightAnchor.constraint(equalToConstant: 45)
+            buyButton.heightAnchor.constraint(equalToConstant: 45),
+            
+            addToFavoritesButton.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 10),
+            addToFavoritesButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
 
