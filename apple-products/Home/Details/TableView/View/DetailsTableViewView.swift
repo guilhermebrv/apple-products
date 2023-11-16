@@ -12,9 +12,9 @@ class DetailsTableViewView: UIView {
     lazy var squareView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .grayApple
+        view.backgroundColor = .lightGray
         view.clipsToBounds = true
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 16
         return view
     }()
     
@@ -69,7 +69,10 @@ class DetailsTableViewView: UIView {
     
     lazy var buyButton: UIButton = {
         let button = UIButton()
+        button.configuration = .filled()
+        button.configuration?.title = "Buy on website"
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont(name: "SFProDisplay-Regular", size: 19)
         return button
     }()
     
@@ -99,11 +102,37 @@ class DetailsTableViewView: UIView {
             squareView.topAnchor.constraint(equalTo: topAnchor),
             squareView.leadingAnchor.constraint(equalTo: leadingAnchor),
             squareView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            squareView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            productImageView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            productImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            productImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 15),
-            productImageView.heightAnchor.constraint(equalToConstant: 200)
+            productImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            productImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            productImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            productImageView.heightAnchor.constraint(equalToConstant: 200),
+            
+            colorsButton.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 15),
+            colorsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            
+            chipImage.topAnchor.constraint(equalTo: colorsButton.bottomAnchor, constant: 15),
+            chipImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            chipImage.heightAnchor.constraint(equalToConstant: 80),
+            chipImage.widthAnchor.constraint(equalToConstant: 80),
+            
+            specsLabel.topAnchor.constraint(equalTo: chipImage.bottomAnchor, constant: 15),
+            specsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            specsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            detailedSpecsLabel.topAnchor.constraint(equalTo: specsLabel.bottomAnchor, constant: 15),
+            detailedSpecsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            detailedSpecsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            priceLabel.topAnchor.constraint(equalTo: detailedSpecsLabel.bottomAnchor, constant: 15),
+            priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            buyButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 25),
+            buyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            buyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            buyButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
 

@@ -41,7 +41,7 @@ class DetailsView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = .clear
         tableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: DetailsTableViewCell.identifier)
         return tableView
     }()
@@ -82,7 +82,7 @@ class DetailsView: UIView {
             exitImageView.widthAnchor.constraint(equalToConstant: 30),
             exitImageView.heightAnchor.constraint(equalToConstant: 30),
             
-            detailsTableView.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 5),
+            detailsTableView.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 10),
             detailsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             detailsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             detailsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 25)

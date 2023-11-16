@@ -313,8 +313,8 @@
 		2BBB1F902B04F046002D400D /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				2BBB1FA32B0528C6002D400D /* ViewModel */,
 				2BBB1F982B050083002D400D /* TableView */,
+				2BBB1FA32B0528C6002D400D /* ViewModel */,
 				2BBB1F922B04F052002D400D /* View Controller */,
 				2BBB1F912B04F04E002D400D /* View */,
 			);

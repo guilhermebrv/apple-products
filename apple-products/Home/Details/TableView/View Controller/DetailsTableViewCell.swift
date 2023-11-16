@@ -24,6 +24,7 @@ class DetailsTableViewCell: UITableViewCell {
     private func configScreen() {
         contentView.addSubview(screen)
         screen.pin(to: contentView)
+        backgroundColor = .clear
     }
     
     //public func setupCell() {}
