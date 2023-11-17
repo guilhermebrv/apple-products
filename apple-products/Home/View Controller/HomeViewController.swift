@@ -99,7 +99,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let details = DetailsViewController()
+        let details = DetailsViewController(product: viewModel.loadCurrentTableViewCell(indexPath: indexPath))
         present(details, animated: true)
     }
 }

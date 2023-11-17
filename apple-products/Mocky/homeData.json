@@ -44,25 +44,17 @@
     "products_list": [
         {
             "product_name": "Macbook Pro 14″",
+            "available_colors": [
+                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&hei=64&fmt=jpeg&qlt=90&.v=1697913361217",
+                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-14-silver-cto-hero-202310_SW_COLOR?wid=64&hei=64&fmt=jpeg&qlt=90&.v=1697913361277"
+            ],
             "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-m3-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562647",
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697230830200",
             "starting_price": "From $1599",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-m3",
             "type": 1,
-            "more_info": [
-                {
-                    "user_name": "Thomas D. Harrington",
-                    "user_image": "https://i.im.ge/2022/12/19/dGXuRq.user02.png",
-                    "nft_price": 2.4,
-                    "last_access": "2h atrás"
-                },
-                {
-                    "user_name": "Clara G. Natal",
-                    "user_image": "https://i.im.ge/2022/12/19/dGXr9C.user03.png",
-                    "nft_price": 0.8,
-                    "last_access": "5h atrás"
-                }
-            ]
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "Macbook Pro 14″",
@@ -70,7 +62,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-m3-max-pro-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697230830118",
             "starting_price": "From $1999",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-m3-pro",
-            "type": 1
+            "type": 1,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "Macbook Pro 14″",
@@ -78,8 +72,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-m3-max-pro-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697230830118",
             "starting_price": "From $3199",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-m3-max",
-
-            "type": 1
+            "type": 1,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "Macbook Pro 16″",
@@ -87,7 +82,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697311054290",
             "starting_price": "From $2499",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-m3-pro",
-            "type": 1
+            "type": 1,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "Macbook Pro 16″",
@@ -95,7 +92,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697311054290",
             "starting_price": "From $3499",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-m3-max",
-            "type": 1
+            "type": 1,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "Macbook Air 13″",
@@ -103,7 +102,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1664472289661",
             "starting_price": "From $999",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-m1",
-            "type": 1
+            "type": 1,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "Macbook Air 13″",
@@ -111,7 +112,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1653084303665",
             "starting_price": "From $1099",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-m2",
-            "type": 1
+            "type": 1,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "Macbook Air 15″",
@@ -119,7 +122,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba15-midnight-select-202306?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1684518479433",
             "starting_price": "From $1299",
             "buy_link": "https://www.apple.com/shop/buy-mac/macbook-air/15-inch-m2",
-            "type": 1
+            "type": 1,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         },
         {
             "product_name": "iPhone 15 Pro",
@@ -127,7 +132,9 @@
             "product_image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692846363993",
             "starting_price": "From $999",
             "buy_link": "https://www.apple.com/shop/buy-iphone/iphone-15-pro",
-            "type": 3
+            "type": 3,
+            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
+            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
         }
     ]
 }

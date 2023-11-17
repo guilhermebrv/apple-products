@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol DetailsViewProtocol: AnyObject {
+    func tappedExit()
+}
+
 class DetailsView: UIView {
+    
+    private weak var delegate: DetailsViewProtocol?
+    public func delegate(delegate: DetailsViewProtocol) {
+        self.delegate = delegate
+    }
     
     lazy var productTypeLabel: UILabel = {
         let label = UILabel()
@@ -29,20 +38,19 @@ class DetailsView: UIView {
     
     lazy var exitImageView: UIImageView = {
         let imageView = UIImageView()
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedExit))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "xmark.circle.fill") 
         imageView.tintColor = .lightGray.withAlphaComponent(0.5)
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(gestureRecognizer)
         return imageView
     }()
     
-    lazy var favoritesButton: UIButton = {
-        let button = UIButton()
-        button.configuration = .plain()
-        button.configuration?.image = UIImage(systemName: "star")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    @objc public func tappedExit() {
+        delegate?.tappedExit()
+    }
     
     lazy var detailsTableView: UITableView = {
         let tableView = UITableView()
@@ -73,7 +81,6 @@ class DetailsView: UIView {
     private func addElements() {
         addSubview(productTypeLabel)
         addSubview(productLabel)
-        addSubview(favoritesButton)
         addSubview(exitImageView)
         addSubview(detailsTableView)
     }
@@ -85,9 +92,6 @@ class DetailsView: UIView {
             
             productLabel.topAnchor.constraint(equalTo: productTypeLabel.bottomAnchor),
             productLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            
-            favoritesButton.leadingAnchor.constraint(equalTo: productLabel.trailingAnchor),
-            favoritesButton.centerYAnchor.constraint(equalTo: productLabel.centerYAnchor),
             
             exitImageView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             exitImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),

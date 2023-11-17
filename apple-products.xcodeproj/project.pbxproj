@@ -13,6 +13,7 @@
 		2B2E66B12AED8ED900C70F27 /* FilterCollectionViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E66B02AED8ED900C70F27 /* FilterCollectionViewCellView.swift */; };
 		2B2E66B32AED8EF200C70F27 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E66B22AED8EF200C70F27 /* ProductsTableViewCell.swift */; };
 		2B2E66B52AED8F1100C70F27 /* ProductsTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E66B42AED8F1100C70F27 /* ProductsTableViewCellView.swift */; };
+		2B5A3AEE2B07B7020037730D /* String - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A3AED2B07B7020037730D /* String - Extension.swift */; };
 		2B84953E2AE82AFE00473818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B84953D2AE82AFE00473818 /* AppDelegate.swift */; };
 		2B8495402AE82AFE00473818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B84953F2AE82AFE00473818 /* SceneDelegate.swift */; };
 		2B8495422AE82AFE00473818 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8495412AE82AFE00473818 /* HomeViewController.swift */; };
@@ -43,6 +44,7 @@
 		2B2E66B02AED8ED900C70F27 /* FilterCollectionViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCellView.swift; sourceTree = "<group>"; };
 		2B2E66B22AED8EF200C70F27 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		2B2E66B42AED8F1100C70F27 /* ProductsTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCellView.swift; sourceTree = "<group>"; };
+		2B5A3AED2B07B7020037730D /* String - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String - Extension.swift"; sourceTree = "<group>"; };
 		2B84953A2AE82AFE00473818 /* apple-products.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apple-products.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B84953D2AE82AFE00473818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B84953F2AE82AFE00473818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				2B9011382AEC3A08005000DD /* UIColor - Extension.swift */,
 				2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */,
+				2B5A3AED2B07B7020037730D /* String - Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				2B2E66B12AED8ED900C70F27 /* FilterCollectionViewCellView.swift in Sources */,
 				2B97655E2AEE86AC000AAB30 /* UIView - Extension.swift in Sources */,
 				2BBB1F9C2B0500A7002D400D /* DetailsTableViewView.swift in Sources */,
+				2B5A3AEE2B07B7020037730D /* String - Extension.swift in Sources */,
 				2BBB1FA22B0527C9002D400D /* DetailsTableViewCell.swift in Sources */,
 				2BBB1FA52B0528DC002D400D /* DetailsViewModel.swift in Sources */,
 				2B84953E2AE82AFE00473818 /* AppDelegate.swift in Sources */,

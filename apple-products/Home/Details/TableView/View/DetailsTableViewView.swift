@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol DetailsTableViewViewProtocol: AnyObject {
+    func tappedFavoritesButton()
+}
+
 class DetailsTableViewView: UIView {
+    
+    private weak var delegate: DetailsTableViewViewProtocol?
+    public func delegate(delegate: DetailsTableViewViewProtocol) {
+        self.delegate = delegate
+    }
 
     lazy var squareView: UIView = {
         let view = UIView()
@@ -43,8 +52,8 @@ class DetailsTableViewView: UIView {
     lazy var specsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Macbook Pro 14″"
         label.font = UIFont(name: "SFProDisplay-Bold", size: 28)
+        label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
@@ -52,9 +61,9 @@ class DetailsTableViewView: UIView {
     lazy var detailedSpecsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Macbook Pro 14″"
         label.font = UIFont(name: "SFProDisplay-Regular", size: 18)
         label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     
@@ -83,8 +92,13 @@ class DetailsTableViewView: UIView {
         button.configuration?.title = "Add to favorites"
         button.configuration?.buttonSize = .small
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(tappedFavoritesButton), for: .touchUpInside)
         return button
     }()
+    
+    @objc public func tappedFavoritesButton() {
+        delegate?.tappedFavoritesButton()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -121,12 +135,14 @@ class DetailsTableViewView: UIView {
             productImageView.heightAnchor.constraint(equalToConstant: 200),
             
             colorsButton.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 15),
-            colorsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            colorsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            colorsButton.heightAnchor.constraint(equalToConstant: 30),
+            colorsButton.widthAnchor.constraint(equalToConstant: 30),
             
             chipImage.topAnchor.constraint(equalTo: colorsButton.bottomAnchor, constant: 15),
             chipImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            chipImage.heightAnchor.constraint(equalToConstant: 80),
-            chipImage.widthAnchor.constraint(equalToConstant: 80),
+            chipImage.heightAnchor.constraint(equalToConstant: 50),
+            chipImage.widthAnchor.constraint(equalToConstant: 50),
             
             specsLabel.topAnchor.constraint(equalTo: chipImage.bottomAnchor, constant: 15),
             specsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -146,7 +162,8 @@ class DetailsTableViewView: UIView {
             buyButton.heightAnchor.constraint(equalToConstant: 45),
             
             addToFavoritesButton.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 10),
-            addToFavoritesButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            addToFavoritesButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            addToFavoritesButton.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 

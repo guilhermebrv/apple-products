@@ -15,7 +15,7 @@ enum ErrorDetail: Swift.Error {
 class HomeService {
     
     func fetchHomeData(completion: @escaping(HomeData?, Error?) -> Void) {
-        let urlString: String = "https://run.mocky.io/v3/e2a8caaf-f983-487c-b40d-0fccaccf0514"
+        let urlString: String = "https://run.mocky.io/v3/fe8bcad4-422f-4b21-9b6d-4cbd67422514"
         guard let url: URL = URL(string: urlString) else { return completion(nil, ErrorDetail.errorURL(urlString: urlString)) }
         
         var request = URLRequest(url: url)

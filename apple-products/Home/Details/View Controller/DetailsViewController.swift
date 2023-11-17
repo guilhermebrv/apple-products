@@ -7,10 +7,29 @@
 
 import UIKit
 
+enum productTypes: Int {
+    case mac = 1
+    case ipad = 2
+    case iphone = 3
+    case watch = 4
+    case vision = 5
+    case airpods = 6
+    case tvhome = 7
+}
+
 class DetailsViewController: UIViewController {
     
     private var screen: DetailsView?
-    private var viewModel: DetailsViewModel = DetailsViewModel()
+    private var viewModel: DetailsViewModel
+    
+    required init(product: ProductsList) {
+        viewModel = DetailsViewModel(product: product)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         screen = DetailsView()
@@ -21,11 +40,39 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         signProtocols()
     }
-    
+        
     private func signProtocols() {
         screen?.delegateTableView(delegate: self, dataSource: self)
+        screen?.delegate(delegate: self)
     }
+    
+    private func setProductNameAndType() {
+        screen?.productLabel.text = viewModel.product.productName
+        switch productTypes(rawValue: viewModel.product.type ?? 0) {
+        case .mac:
+            screen?.productTypeLabel.text = "Mac"
+        case .ipad:
+            screen?.productTypeLabel.text = "iPad"
+        case .iphone:
+            screen?.productTypeLabel.text = "iPhone"
+        case .watch:
+            screen?.productTypeLabel.text = "Watch"
+        case .vision:
+            screen?.productTypeLabel.text = "Vision"
+        case .airpods:
+            screen?.productTypeLabel.text = "Airpods"
+        case .tvhome:
+            screen?.productTypeLabel.text = "TV & Home"
+        default:
+            return
+        }
+    }
+}
 
+extension DetailsViewController: DetailsViewProtocol {
+    func tappedExit() {
+        dismiss(animated: true)
+    }
 }
 
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -35,11 +82,12 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailsTableViewCell.identifier, for: indexPath) as? DetailsTableViewCell
-        cell?.selectionStyle = .none
+        setProductNameAndType()
+        cell?.setupCell(product: viewModel.product)
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.heightForRowAt
+        return viewModel.heightForRowAt(width: tableView.frame.width)
     }
 }

@@ -28,35 +28,23 @@ struct FilterProduct: Codable {
 // MARK: - ProductsList
 struct ProductsList: Codable {
     var productName: String?
+    var availableColors: [String]?
     var chipImage, productImage: String?
     var startingPrice: String?
     var buyLink: String?
     var type: Int?
-    var moreInfo: [MoreInfo]?
+    var specs, detailedSpecs: String?
+    
 
     enum CodingKeys: String, CodingKey {
         case productName = "product_name"
+        case availableColors = "available_colors"
         case chipImage = "chip_image"
         case productImage = "product_image"
         case startingPrice = "starting_price"
         case buyLink = "buy_link"
-        case type
-        case moreInfo = "more_info"
-    }
-}
-
-// MARK: - MoreInfo -                                                          UPDATE WITH ACTUAL INFORMATION
-struct MoreInfo: Codable {
-    var userName: String?
-    var userImage: String?
-    var nftPrice: Double?
-    var lastAccess: String?
-
-    enum CodingKeys: String, CodingKey {
-        case userName = "user_name"
-        case userImage = "user_image"
-        case nftPrice = "nft_price"
-        case lastAccess = "last_access"
+        case type, specs
+        case detailedSpecs = "detailed_specs"
     }
 }
 
