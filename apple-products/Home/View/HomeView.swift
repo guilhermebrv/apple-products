@@ -35,10 +35,10 @@ class HomeView: UIView {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.clipsToBounds = true
-        searchBar.backgroundColor = UIColor.grayApple
-        searchBar.barTintColor = UIColor.grayApple
         searchBar.layer.cornerRadius = 20
+        searchBar.searchBarStyle = .minimal
         searchBar.barStyle = .black
+        searchBar.tintColor = .darkGray
         searchBar.searchTextField.leftView?.tintColor = .black.withAlphaComponent(0.5)
         searchBar.placeholder = "Search for a product:"
         return searchBar
@@ -119,8 +119,8 @@ class HomeView: UIView {
             filterCollectionView.heightAnchor.constraint(equalToConstant: 65),
             
             productsTableView.topAnchor.constraint(equalTo: filterCollectionView.bottomAnchor),
-            productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            productsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            productsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            productsTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             productsTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

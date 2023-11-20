@@ -13,7 +13,7 @@ class ProductsTableViewCellView: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .lightGray.withAlphaComponent(0.5)
-        view.clipsToBounds = true
+        view.setCardShadow()
         view.layer.cornerRadius = 14
         return view
     }()
@@ -90,9 +90,9 @@ class ProductsTableViewCellView: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            squareView.topAnchor.constraint(equalTo: topAnchor),
-            squareView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            squareView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            squareView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            squareView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            squareView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
             squareView.heightAnchor.constraint(equalToConstant: 365),
             
             productImageView.topAnchor.constraint(equalTo: squareView.topAnchor),
@@ -101,15 +101,15 @@ class ProductsTableViewCellView: UIView {
             productImageView.heightAnchor.constraint(equalToConstant: 285),
             
             logoImageView.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 12),
-            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            logoImageView.leadingAnchor.constraint(equalTo: squareView.leadingAnchor, constant: 14),
             logoImageView.widthAnchor.constraint(equalToConstant: 18),
             logoImageView.heightAnchor.constraint(equalToConstant: 22),
             
             productLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: -2),
             productLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 5),
             
-            infoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            infoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            infoImageView.topAnchor.constraint(equalTo: squareView.topAnchor, constant: 10),
+            infoImageView.trailingAnchor.constraint(equalTo: squareView.trailingAnchor, constant: -10),
             infoImageView.widthAnchor.constraint(equalToConstant: 30),
             infoImageView.heightAnchor.constraint(equalToConstant: 30),
             
@@ -117,7 +117,7 @@ class ProductsTableViewCellView: UIView {
             startingPriceLabel.leadingAnchor.constraint(equalTo: productLabel.leadingAnchor),
             
             chipImage.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 17),
-            chipImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            chipImage.trailingAnchor.constraint(equalTo: squareView.trailingAnchor, constant: -12),
             chipImage.widthAnchor.constraint(equalToConstant: 45),
             chipImage.heightAnchor.constraint(equalToConstant: 45),
         ])

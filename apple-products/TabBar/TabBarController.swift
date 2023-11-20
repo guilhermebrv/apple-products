@@ -25,6 +25,7 @@ class TabBarController: UITabBarController {
         
         tabBar.isTranslucent = false
         tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = .blue
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
         

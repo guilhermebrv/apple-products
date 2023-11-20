@@ -30,7 +30,6 @@ class FavoritesViewController: UIViewController {
     private func signProtocols() {
         screen?.delegateTableView(delegate: self, dataSource: self)
     }
-    
 }
 
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {

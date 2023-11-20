@@ -67,8 +67,8 @@ class FavoritesView: UIView {
             sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 10),
             
             favoritesTableView.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 25),
-            favoritesTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            favoritesTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            favoritesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            favoritesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             favoritesTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

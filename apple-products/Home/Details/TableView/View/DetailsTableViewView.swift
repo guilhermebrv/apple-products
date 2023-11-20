@@ -9,7 +9,7 @@ import UIKit
 
 protocol DetailsTableViewViewProtocol: AnyObject {
     func tappedFavoritesButton()
-    func buyOnSafari(sender: UIButton, url: String)
+    func setButtonURL(url: String)
 }
 
 class DetailsTableViewView: UIView {
@@ -88,12 +88,19 @@ class DetailsTableViewView: UIView {
         button.configuration?.title = "Buy on website"
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont(name: "SFProDisplay-Regular", size: 19)
-        button.addTarget(self, action: #selector(buyOnSafari), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buyButtonPressed), for: .touchUpInside)
         return button
     }()
     
-    @objc func buyOnSafari(sender: UIButton, url: String) {
-        delegate?.buyOnSafari(sender: self.buyButton, url: url)
+    private var buyButtonAction: (() -> Void)?
+    @objc private func buyButtonPressed() {
+        buyButtonAction?()
+    }
+    public func setBuyButtonAction(action: @escaping () -> Void) {
+        buyButtonAction = action
+    }
+    public func setButtonURL(url: String) {
+        delegate?.setButtonURL(url: url)
     }
     
     lazy var addToFavoritesButton: UIButton = {

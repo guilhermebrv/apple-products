@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailsTableViewCell: UITableViewCell {
     
@@ -61,24 +62,25 @@ class DetailsTableViewCell: UITableViewCell {
             belowElementsConstraint = self.screen.specsLabel.topAnchor.constraint(equalTo: self.screen.productImageView.bottomAnchor, constant: 15)
             belowElementsConstraint.isActive = true
         }
-        screen.buyButton.
-        screen.buyOnSafari(sender: screen.buyButton, url: product.buyLink ?? "")
         screen.priceLabel.text = product.startingPrice
         screen.specsLabel.text = product.specs
         screen.detailedSpecsLabel.text = product.detailedSpecs
+        screen.setBuyButtonAction { [weak self] in
+            self?.setButtonURL(url: product.buyLink ?? "")
+        }
     }
-    
 }
 
 extension DetailsTableViewCell: DetailsTableViewViewProtocol {
-    func buyOnSafari(sender: UIButton, url: String) {
-        print("cu")
-        /*if let buyURL: URL = URL(string: url) {
+    func setButtonURL(url: String) {
+        if let buyURL: URL = URL(string: url) {
             UIApplication.shared.open(buyURL, options: [:], completionHandler: nil)
-        }*/
+        }
     }
     
     func tappedFavoritesButton() {
+        //let defaults = UserDefaults.standard
+        //defaults.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
         if screen.addToFavoritesButton.configuration?.image == UIImage(systemName: "star") {
             screen.addToFavoritesButton.configuration?.image = UIImage(systemName: "star.fill")
             screen.addToFavoritesButton.configuration?.title = "Remove from favorites"
