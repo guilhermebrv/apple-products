@@ -44,10 +44,6 @@
     "products_list": [
         {
             "product_name": "Macbook Pro 14″",
-            "available_colors": [
-                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&hei=64&fmt=jpeg&qlt=90&.v=1697913361217",
-                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-14-silver-cto-hero-202310_SW_COLOR?wid=64&hei=64&fmt=jpeg&qlt=90&.v=1697913361277"
-            ],
             "chip_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-m3-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562647",
             "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697230830200",
             "starting_price": "From $1599",

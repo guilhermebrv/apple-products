@@ -9,6 +9,7 @@ import UIKit
 
 protocol DetailsTableViewViewProtocol: AnyObject {
     func tappedFavoritesButton()
+    func buyOnSafari(sender: UIButton, url: String)
 }
 
 class DetailsTableViewView: UIView {
@@ -35,19 +36,24 @@ class DetailsTableViewView: UIView {
         imageView.image = UIImage(named: "apple-bg") // FOR TESTING
         return imageView
     }()
-    
-    lazy var colorsButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+
     
     lazy var chipImage: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.isHidden = true
         return imageView
     }()
+    
+    public func removeChipConstraints() {
+        specsLabel.topAnchor.constraint(equalTo: chipImage.bottomAnchor, constant: 15).isActive = false
+        chipImage.removeFromSuperview()
+        chipImage.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 15).isActive = false
+        chipImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = false
+        chipImage.heightAnchor.constraint(equalToConstant: 50).isActive = false
+        chipImage.widthAnchor.constraint(equalToConstant: 50).isActive = false
+    }
     
     lazy var specsLabel: UILabel = {
         let label = UILabel()
@@ -82,8 +88,13 @@ class DetailsTableViewView: UIView {
         button.configuration?.title = "Buy on website"
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont(name: "SFProDisplay-Regular", size: 19)
+        button.addTarget(self, action: #selector(buyOnSafari), for: .touchUpInside)
         return button
     }()
+    
+    @objc func buyOnSafari(sender: UIButton, url: String) {
+        delegate?.buyOnSafari(sender: self.buyButton, url: url)
+    }
     
     lazy var addToFavoritesButton: UIButton = {
         let button = UIButton()
@@ -113,7 +124,6 @@ class DetailsTableViewView: UIView {
     private func addElements() {
         addSubview(squareView)
         squareView.addSubview(productImageView)
-        squareView.addSubview(colorsButton)
         squareView.addSubview(chipImage)
         squareView.addSubview(specsLabel)
         squareView.addSubview(detailedSpecsLabel)
@@ -134,12 +144,7 @@ class DetailsTableViewView: UIView {
             productImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             productImageView.heightAnchor.constraint(equalToConstant: 200),
             
-            colorsButton.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 15),
-            colorsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            colorsButton.heightAnchor.constraint(equalToConstant: 30),
-            colorsButton.widthAnchor.constraint(equalToConstant: 30),
-            
-            chipImage.topAnchor.constraint(equalTo: colorsButton.bottomAnchor, constant: 15),
+            chipImage.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 15),
             chipImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             chipImage.heightAnchor.constraint(equalToConstant: 50),
             chipImage.widthAnchor.constraint(equalToConstant: 50),

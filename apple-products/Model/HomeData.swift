@@ -28,7 +28,6 @@ struct FilterProduct: Codable {
 // MARK: - ProductsList
 struct ProductsList: Codable {
     var productName: String?
-    var availableColors: [String]?
     var chipImage, productImage: String?
     var startingPrice: String?
     var buyLink: String?
@@ -38,7 +37,6 @@ struct ProductsList: Codable {
 
     enum CodingKeys: String, CodingKey {
         case productName = "product_name"
-        case availableColors = "available_colors"
         case chipImage = "chip_image"
         case productImage = "product_image"
         case startingPrice = "starting_price"
