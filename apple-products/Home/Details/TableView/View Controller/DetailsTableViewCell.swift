@@ -16,7 +16,6 @@ class DetailsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configScreen()
-        screen.delegate(delegate: self)
     }
     
     required init?(coder: NSCoder) {
@@ -29,7 +28,7 @@ class DetailsTableViewCell: UITableViewCell {
         backgroundColor = .clear
     }
     
-    public func setupCell(product: ProductsList) {
+    public func setupCell(product: ProductsList, delegate: DetailsTableViewViewProtocol) {
         selectionStyle = .none
         screen.productImageView.image = UIImage(named: product.productImage ?? "")
         if let urlProduct: URL = URL(string: product.productImage ?? "") {
@@ -65,28 +64,9 @@ class DetailsTableViewCell: UITableViewCell {
         screen.priceLabel.text = product.startingPrice
         screen.specsLabel.text = product.specs
         screen.detailedSpecsLabel.text = product.detailedSpecs
+        screen.delegate(delegate: delegate)
         screen.setBuyButtonAction { [weak self] in
-            self?.setButtonURL(url: product.buyLink ?? "")
-        }
-    }
-}
-
-extension DetailsTableViewCell: DetailsTableViewViewProtocol {
-    func setButtonURL(url: String) {
-        if let buyURL: URL = URL(string: url) {
-            UIApplication.shared.open(buyURL, options: [:], completionHandler: nil)
-        }
-    }
-    
-    func tappedFavoritesButton() {
-        //let defaults = UserDefaults.standard
-        //defaults.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
-        if screen.addToFavoritesButton.configuration?.image == UIImage(systemName: "star") {
-            screen.addToFavoritesButton.configuration?.image = UIImage(systemName: "star.fill")
-            screen.addToFavoritesButton.configuration?.title = "Remove from favorites"
-        } else {
-            screen.addToFavoritesButton.configuration?.image = UIImage(systemName: "star")
-            screen.addToFavoritesButton.configuration?.title = "Add to favorites"
+            self?.screen.buttonOpenURL(url: product.buyLink ?? "")
         }
     }
 }

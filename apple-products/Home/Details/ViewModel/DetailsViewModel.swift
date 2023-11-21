@@ -10,6 +10,7 @@ import UIKit
 class DetailsViewModel {
     
     let product: ProductsList
+    let tableScreen: DetailsTableViewView = DetailsTableViewView()
     
     init(product: ProductsList) {
         self.product = product
@@ -28,5 +29,34 @@ class DetailsViewModel {
         let price = product.startingPrice?.height(withConstrainedWidth: width - 40, font: UIFont(name: "SFProDisplay-Bold", size: 26) ?? UIFont.systemFont(ofSize: 26)) ?? CGFloat()
                         
         return 380 + chipImage + specs + detailedSpecs + price
+    }
+    
+    let encoder = JSONEncoder()
+    let decoder = JSONDecoder()
+    let defaults = UserDefaults.standard
+    
+    public func saveFavoriteToData(data: ProductsList) {
+        var savedProducts = readFavoritesData() ?? []
+        if !savedProducts.contains(where: { $0.buyLink == data.buyLink }) {
+            savedProducts.append(data)
+            if let encoded = try? encoder.encode(savedProducts) {
+                defaults.set(encoded, forKey: "SavedProducts")
+            }
+        }
+    }
+    public func readFavoritesData() -> [ProductsList]? {
+        if let savedProducts = defaults.object(forKey: "SavedProducts") as? Data {
+            if let loadedProducts = try? decoder.decode([ProductsList].self, from: savedProducts) {
+                return loadedProducts
+            }
+        }
+        return nil
+    }
+    public func printAllStoredData() {
+        if let allFavorites = readFavoritesData() {
+            for product in allFavorites {
+                print(product)
+            }
+        }
     }
 }

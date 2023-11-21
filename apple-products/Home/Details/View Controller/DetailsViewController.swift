@@ -69,12 +69,6 @@ class DetailsViewController: UIViewController {
     }
 }
 
-extension DetailsViewController: DetailsViewProtocol {
-    func tappedExit() {
-        dismiss(animated: true)
-    }
-}
-
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection
@@ -83,11 +77,30 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailsTableViewCell.identifier, for: indexPath) as? DetailsTableViewCell
         setProductNameAndType()
-        cell?.setupCell(product: viewModel.product)
+        cell?.setupCell(product: viewModel.product, delegate: self)
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.heightForRowAt(width: tableView.frame.width)
+    }
+}
+
+extension DetailsViewController: DetailsTableViewViewProtocol {
+    func tappedFavoritesButton() {
+        viewModel.saveFavoriteToData(data: viewModel.product)
+        viewModel.printAllStoredData()
+    }
+    
+    func buttonOpenURL(url: String) {
+        if let buyURL: URL = URL(string: url) {
+            UIApplication.shared.open(buyURL, options: [:], completionHandler: nil)
+        }
+    }
+}
+
+extension DetailsViewController: DetailsViewProtocol {
+    func tappedExit() {
+        dismiss(animated: true)
     }
 }

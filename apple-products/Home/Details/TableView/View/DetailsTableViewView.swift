@@ -9,7 +9,7 @@ import UIKit
 
 protocol DetailsTableViewViewProtocol: AnyObject {
     func tappedFavoritesButton()
-    func setButtonURL(url: String)
+    func buttonOpenURL(url: String)
 }
 
 class DetailsTableViewView: UIView {
@@ -99,8 +99,8 @@ class DetailsTableViewView: UIView {
     public func setBuyButtonAction(action: @escaping () -> Void) {
         buyButtonAction = action
     }
-    public func setButtonURL(url: String) {
-        delegate?.setButtonURL(url: url)
+    public func buttonOpenURL(url: String) {
+        delegate?.buttonOpenURL(url: url)
     }
     
     lazy var addToFavoritesButton: UIButton = {
@@ -115,6 +115,13 @@ class DetailsTableViewView: UIView {
     }()
     
     @objc public func tappedFavoritesButton() {
+        if addToFavoritesButton.configuration?.image == UIImage(systemName: "star") {
+            addToFavoritesButton.configuration?.image = UIImage(systemName: "star.fill")
+            addToFavoritesButton.configuration?.title = "Remove from favorites"
+        } else {
+            addToFavoritesButton.configuration?.image = UIImage(systemName: "star")
+            addToFavoritesButton.configuration?.title = "Add to favorites"
+        }
         delegate?.tappedFavoritesButton()
     }
     
