@@ -78,7 +78,7 @@ class DetailsViewModel {
     public func printAllStoredData() {
         if let allFavorites = readFavoritesData() {
             for product in allFavorites {
-                print(product)
+                print(product.productName ?? "")
             }
         }
     }
