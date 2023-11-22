@@ -78,6 +78,9 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailsTableViewCell.identifier, for: indexPath) as? DetailsTableViewCell
         setProductNameAndType()
         cell?.setupCell(product: viewModel.product, delegate: self)
+        if viewModel.isProductFavorited(product: viewModel.product) {
+            cell?.productIsFavorited()
+        }
         return cell ?? UITableViewCell()
     }
     

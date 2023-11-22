@@ -31,6 +31,8 @@ class DetailsViewModel {
         return 380 + chipImage + specs + detailedSpecs + price
     }
     
+    // MARK: Adding, reading and removing products from Favorites Data
+    
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
     let defaults = UserDefaults.standard
@@ -44,6 +46,7 @@ class DetailsViewModel {
             }
         }
     }
+    
     public func readFavoritesData() -> [ProductsList]? {
         if let savedProducts = defaults.object(forKey: "SavedProducts") as? Data {
             if let loadedProducts = try? decoder.decode([ProductsList].self, from: savedProducts) {
@@ -52,6 +55,16 @@ class DetailsViewModel {
         }
         return nil
     }
+    
+    public func isProductFavorited(product: ProductsList) -> Bool {
+        if let favorites = readFavoritesData(), favorites.contains(where: { $0.buyLink == product.buyLink }) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    //apagar esta funcao, apenas para testes
     public func printAllStoredData() {
         if let allFavorites = readFavoritesData() {
             for product in allFavorites {

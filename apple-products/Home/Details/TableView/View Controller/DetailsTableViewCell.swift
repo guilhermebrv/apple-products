@@ -69,4 +69,9 @@ class DetailsTableViewCell: UITableViewCell {
             self?.screen.buttonOpenURL(url: product.buyLink ?? "")
         }
     }
+    
+    public func productIsFavorited() {
+        screen.addToFavoritesButton.configuration?.image = UIImage(systemName: "star.fill")
+        screen.addToFavoritesButton.configuration?.title = "Remove from favorites"
+    }
 }
