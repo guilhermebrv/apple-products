@@ -64,6 +64,16 @@ class DetailsViewModel {
         }
     }
     
+    public func removeFromFavoritesData(data: ProductsList) {
+        var savedProducts = readFavoritesData() ?? []
+        if savedProducts.contains(where: { $0.buyLink == data.buyLink }) {
+            savedProducts.removeAll(where: { $0.buyLink == data.buyLink })
+            if let encoded = try? encoder.encode(savedProducts) {
+                defaults.set(encoded, forKey: "SavedProducts")
+            }
+        }
+    }
+    
     //apagar esta funcao, apenas para testes
     public func printAllStoredData() {
         if let allFavorites = readFavoritesData() {

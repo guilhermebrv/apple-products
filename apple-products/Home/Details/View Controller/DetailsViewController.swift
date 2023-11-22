@@ -80,6 +80,8 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.setupCell(product: viewModel.product, delegate: self)
         if viewModel.isProductFavorited(product: viewModel.product) {
             cell?.productIsFavorited()
+            //comment out this line
+            print("product is favorited")
         }
         return cell ?? UITableViewCell()
     }
@@ -91,8 +93,11 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension DetailsViewController: DetailsTableViewViewProtocol {
     func tappedFavoritesButton() {
-        viewModel.saveFavoriteToData(data: viewModel.product)
+        //viewModel.saveFavoriteToData(data: viewModel.product)
+        viewModel.removeFromFavoritesData(data: viewModel.product)
         viewModel.printAllStoredData()
+        
+        
     }
     
     func buttonOpenURL(url: String) {
