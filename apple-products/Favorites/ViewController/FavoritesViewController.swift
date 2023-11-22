@@ -19,6 +19,7 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        screen?.favoritesTableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -34,12 +35,16 @@ class FavoritesViewController: UIViewController {
 
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if viewModel.numberOfRowsInSection == 0 {
+            screen?.noFavoritesLabel.isHidden = false
+        }
         return viewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier, for: indexPath) as? ProductsTableViewCell
         cell?.selectionStyle = .none
+        cell?.setupCell(data: viewModel.loadCurrentFavoriteCell(indexPath: indexPath))
         return cell ?? UITableViewCell()
     }
     
