@@ -9,7 +9,7 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
-    private var screen: FavoritesView?
+    public var screen: FavoritesView?
     private var viewModel: FavoritesViewModel = FavoritesViewModel()
     
     override func loadView() {
@@ -33,10 +33,18 @@ class FavoritesViewController: UIViewController {
     }
 }
 
+extension FavoritesViewController: DetailsViewControllerProtocol {
+    func modalViewControllerDidDismiss() {
+        screen?.favoritesTableView.reloadData()
+    }
+}
+
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.numberOfRowsInSection == 0 {
             screen?.noFavoritesLabel.isHidden = false
+        } else {
+            screen?.noFavoritesLabel.isHidden = true
         }
         return viewModel.numberOfRowsInSection
     }
@@ -50,5 +58,11 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.heightForRowAt
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let modal = DetailsViewController(product: viewModel.loadCurrentFavoriteCell(indexPath: indexPath))
+        modal.delegate = self
+        present(modal, animated: true, completion: nil)
     }
 }

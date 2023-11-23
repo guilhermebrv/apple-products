@@ -17,8 +17,13 @@ enum productTypes: Int {
     case tvhome = 7
 }
 
+protocol DetailsViewControllerProtocol: AnyObject {
+    func modalViewControllerDidDismiss()
+}
+
 class DetailsViewController: UIViewController {
     
+    weak var delegate: DetailsViewControllerProtocol?
     private var screen: DetailsView?
     private var viewModel: DetailsViewModel
     
@@ -39,6 +44,12 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        dismiss(animated: true) {
+            self.delegate?.modalViewControllerDidDismiss()
+        }
     }
         
     private func signProtocols() {
@@ -97,8 +108,7 @@ extension DetailsViewController: DetailsTableViewViewProtocol {
         } else {
             viewModel.saveFavoriteToData(data: viewModel.product)
         }
-        // for testing // 
-        viewModel.printAllStoredData()
+        // for testing // viewModel.printAllStoredData()
     }
     
     func buttonOpenURL(url: String) {

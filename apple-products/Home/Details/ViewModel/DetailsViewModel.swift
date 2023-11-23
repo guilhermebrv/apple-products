@@ -74,12 +74,12 @@ class DetailsViewModel {
         }
     }
     
-    //apagar esta funcao, apenas para testes
+    /*
     public func printAllStoredData() {
         if let allFavorites = readFavoritesData() {
             for product in allFavorites {
                 print(product.productName ?? "")
             }
         }
-    }
+    }*/
 }
