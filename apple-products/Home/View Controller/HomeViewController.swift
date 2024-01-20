@@ -45,7 +45,7 @@ extension HomeViewController: HomeViewModelProtocol {
     }
     
     func error() {
-        //
+        print("error fetching data request")
     }
 }
 

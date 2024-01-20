@@ -125,12 +125,52 @@
         {
             "product_name": "iPhone 15 Pro",
             "chip_image": "",
-            "product_image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692846363993",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009278581",
             "starting_price": "From $999",
             "buy_link": "https://www.apple.com/shop/buy-iphone/iphone-15-pro",
             "type": 3,
-            "specs": "8-core CPU\n10-core GPU\n8GB Unified Memory\n512GB SSD Storage",
-            "detailed_specs": "14-inch Liquid Retina XDR display\nTwo Thunderbolt / USB 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port\nMagic Keyboard with Touch ID\nForce Touch trackpad\n70W USB-C Power Adapter"
-        }
+            "specs": "A17 Pro chip\nNew 6‑core CPU with 2 performance and 4 efficiency cores\nNew 6‑core GPU\nNew 16‑core Neural Engine\nSuper Retina XDR display\n6.1‑inch (diagonal) all‑screen OLED display\n2556‑by‑1179-pixel resolution at 460 ppi",
+            "detailed_specs": "Dynamic Island\nAlways-On display\nProMotion technology with adaptive refresh rates up to 120Hz\nHDR display\nTrue Tone\nWide color (P3)\nHaptic Touch\n2,000,000:1 contrast ratio (typical)\n1000 nits max brightness (typical); 1600 nits peak brightness (HDR); 2000 nits peak brightness (outdoor)\nFingerprint-resistant oleophobic coating\nSupport for display of multiple languages and characters simultaneously\n"
+        },
+        {
+            "product_name": "iPhone 15 Pro Max",
+            "chip_image": "",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009278581",
+            "starting_price": "From $1199",
+            "buy_link": "https://www.apple.com/shop/buy-iphone/iphone-15-pro",
+            "type": 3,
+            "specs": "A17 Pro chip\nNew 6‑core CPU with 2 performance and 4 efficiency cores\nNew 6‑core GPU\nNew 16‑core Neural Engine\nSuper Retina XDR display\n6.7‑inch (diagonal) all‑screen OLED display\n2796‑by‑1290-pixel resolution at 460 ppi",
+            "detailed_specs": "Dynamic Island\nAlways-On display\nProMotion technology with adaptive refresh rates up to 120Hz\nHDR display\nTrue Tone\nWide color (P3)\nHaptic Touch\n2,000,000:1 contrast ratio (typical)\n1000 nits max brightness (typical); 1600 nits peak brightness (HDR); 2000 nits peak brightness (outdoor)\nFingerprint-resistant oleophobic coating\nSupport for display of multiple languages and characters simultaneously\n"
+        },
+        {
+            "product_name": "iPhone 15",
+            "chip_image": "",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-model-unselect-gallery-1-202309?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692810665888",
+            "starting_price": "From $799",
+            "buy_link": "https://www.apple.com/shop/buy-iphone/iphone-15",
+            "type": 3,
+            "specs": "A16 Bionic chip\n6‑core CPU with 2 performance and 4 efficiency cores\n5‑core GPU\n16‑core Neural Engine\nSuper Retina XDR display\n6.1‑inch (diagonal) all‑screen OLED display\n2556‑by‑1179-pixel resolution at 460 ppi",
+            "detailed_specs": "Dynamic Island\nHDR display\nTrue Tone\nWide color (P3)\nHaptic Touch\n2,000,000:1 contrast ratio (typical)\n1000 nits max brightness (typical); 1600 nits peak brightness (HDR); 2000 nits peak brightness (outdoor)\nFingerprint-resistant oleophobic coating\nSupport for display of multiple languages and characters simultaneously\n"
+        },
+        {
+            "product_name": "iPhone 15 Plus",
+            "chip_image": "",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-model-unselect-gallery-1-202309?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692810665888",
+            "starting_price": "From $899",
+            "buy_link": "https://www.apple.com/shop/buy-iphone/iphone-15",
+            "type": 3,
+            "specs": "A16 Bionic chip\n6‑core CPU with 2 performance and 4 efficiency cores\n5‑core GPU\n16‑core Neural Engine\nSuper Retina XDR display\n6.7‑inch (diagonal) all‑screen OLED display\n2796‑by‑1290-pixel resolution at 460 ppi",
+            "detailed_specs": "Dynamic Island\nHDR display\nTrue Tone\nWide color (P3)\nHaptic Touch\n2,000,000:1 contrast ratio (typical)\n1000 nits max brightness (typical); 1600 nits peak brightness (HDR); 2000 nits peak brightness (outdoor)\nFingerprint-resistant oleophobic coating\nSupport for display of multiple languages and characters simultaneously\n"
+        },
+        {
+            "product_name": "iPhone SE",
+            "chip_image": "",
+            "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-se-finish-unselect-gallery-3-202207?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1655249913137",
+            "starting_price": "From $429",
+            "buy_link": "https://www.apple.com/shop/buy-iphone/iphone-se",
+            "type": 3,
+            "specs": "A15 Bionic chip\n6-core CPU with 2 performance and 4 efficiency cores\n4-core GPU\n16-core Neural EngineRetina HD display\n4.7-inch (diagonal) widescreen LCD Multi‑Touch display with IPS technology\n1334-by-750-pixel resolution at 326 ppi",
+            "detailed_specs": "1400:1 contrast ratio (typical)\nTrue Tone display\nWide color display (P3)\nHaptic Touch\n625 nits max brightness (typical)\nFingerprint-resistant oleophobic coating\nDisplay Zoom\nReachability"
+        },
     ]
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - HomeData
 struct HomeData: Codable {
     var filterProduct: [FilterProduct]?
     var productsList: [ProductsList]?

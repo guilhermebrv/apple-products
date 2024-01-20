@@ -73,7 +73,7 @@ class DetailsViewModel {
             }
         }
     }
-    
+        
     /*
     public func printAllStoredData() {
         if let allFavorites = readFavoritesData() {
