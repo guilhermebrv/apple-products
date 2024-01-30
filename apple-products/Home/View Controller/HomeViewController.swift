@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         signProtocols()
+		dismissKeyBoard()
         viewModel.fetchRequest()
     }
     

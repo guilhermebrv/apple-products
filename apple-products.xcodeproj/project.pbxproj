@@ -35,6 +35,7 @@
 		2BBB1F9C2B0500A7002D400D /* DetailsTableViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1F9B2B0500A7002D400D /* DetailsTableViewView.swift */; };
 		2BBB1FA22B0527C9002D400D /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1FA12B0527C9002D400D /* DetailsTableViewCell.swift */; };
 		2BBB1FA52B0528DC002D400D /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */; };
+		2BBFD4772B6976E000F58F19 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFD4762B6976E000F58F19 /* UIViewController + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		2BBB1F9B2B0500A7002D400D /* DetailsTableViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewView.swift; sourceTree = "<group>"; };
 		2BBB1FA12B0527C9002D400D /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		2BBFD4762B6976E000F58F19 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,11 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				2B990C312AFAA6E8008E3C70 /* Mocky */,
-				2B9765642AF01366000AAB30 /* Model */,
 				2B90113C2AED1FC4005000DD /* Constants */,
 				2B9011352AEC3914005000DD /* Extensions */,
-				2B990C2F2AFA9373008E3C70 /* Service */,
 				2B8F781E2B03928C00BCDFDB /* TabBar */,
+				2B9765642AF01366000AAB30 /* Models */,
 				2B8F78212B0398A600BCDFDB /* Favorites */,
 				2B0E29202AEA68E700C35A79 /* Home */,
 				2B8495622AE9811900473818 /* Source */,
@@ -270,6 +271,7 @@
 				2B9011382AEC3A08005000DD /* UIColor - Extension.swift */,
 				2B97655D2AEE86AC000AAB30 /* UIView - Extension.swift */,
 				2B5A3AED2B07B7020037730D /* String - Extension.swift */,
+				2BBFD4762B6976E000F58F19 /* UIViewController + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,28 +283,13 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		2B9765642AF01366000AAB30 /* Model */ = {
+		2B9765642AF01366000AAB30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2B990C2D2AFA686A008E3C70 /* HomeData.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2B990C2F2AFA9373008E3C70 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				2B990C302AFA9399008E3C70 /* HomeService */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		2B990C302AFA9399008E3C70 /* HomeService */ = {
-			isa = PBXGroup;
-			children = (
 				2B990C322AFAA78A008E3C70 /* HomeService.swift */,
 			);
-			path = HomeService;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2B990C312AFAA6E8008E3C70 /* Mocky */ = {
@@ -456,6 +443,7 @@
 				2BBB1FA22B0527C9002D400D /* DetailsTableViewCell.swift in Sources */,
 				2BBB1FA52B0528DC002D400D /* DetailsViewModel.swift in Sources */,
 				2B84953E2AE82AFE00473818 /* AppDelegate.swift in Sources */,
+				2BBFD4772B6976E000F58F19 /* UIViewController + Extension.swift in Sources */,
 				2B2E66B32AED8EF200C70F27 /* ProductsTableViewCell.swift in Sources */,
 				2B8495402AE82AFE00473818 /* SceneDelegate.swift in Sources */,
 				2B8F782A2B03E61600BCDFDB /* FavoritesViewModel.swift in Sources */,
