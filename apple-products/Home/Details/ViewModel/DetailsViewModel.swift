@@ -32,12 +32,7 @@ class DetailsViewModel {
     }
     
     // MARK: Adding, reading and removing products from Favorites Data
-    
-    let encoder = JSONEncoder()
-    let decoder = JSONDecoder()
-    let defaults = UserDefaults.standard
-    
-    public func saveFavoriteToData(data: ProductsList) {
+	public func saveFavoriteToData(data: ProductsList) {
         var savedProducts = readFavoritesData() ?? []
         if !savedProducts.contains(where: { $0.buyLink == data.buyLink }) {
             savedProducts.append(data)

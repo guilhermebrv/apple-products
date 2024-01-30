@@ -36,6 +36,8 @@
 		2BBB1FA22B0527C9002D400D /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1FA12B0527C9002D400D /* DetailsTableViewCell.swift */; };
 		2BBB1FA52B0528DC002D400D /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */; };
 		2BBFD4772B6976E000F58F19 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFD4762B6976E000F58F19 /* UIViewController + Extension.swift */; };
+		2BBFD47A2B6977B900F58F19 /* FavoriteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFD4782B6977B900F58F19 /* FavoriteData.xcdatamodeld */; };
+		2BBFD47D2B69783900F58F19 /* FavoriteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBFD47C2B69783900F58F19 /* FavoriteDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		2BBB1FA12B0527C9002D400D /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		2BBFD4762B6976E000F58F19 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		2BBFD4792B6977B900F58F19 /* FavoriteData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteData.xcdatamodel; sourceTree = "<group>"; };
+		2BBFD47C2B69783900F58F19 /* FavoriteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 				2B9765642AF01366000AAB30 /* Models */,
 				2B8F78212B0398A600BCDFDB /* Favorites */,
 				2B0E29202AEA68E700C35A79 /* Home */,
+				2BBFD47B2B6977CD00F58F19 /* Supporting */,
 				2B8495622AE9811900473818 /* Source */,
 				2B84954B2AE82B0100473818 /* Info.plist */,
 			);
@@ -206,10 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				2B9011322AEC35D0005000DD /* Fonts */,
-				2B84953F2AE82AFE00473818 /* SceneDelegate.swift */,
-				2B84953D2AE82AFE00473818 /* AppDelegate.swift */,
-				2B8495462AE82B0100473818 /* Assets.xcassets */,
-				2B8495482AE82B0100473818 /* LaunchScreen.storyboard */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -286,6 +287,8 @@
 		2B9765642AF01366000AAB30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2BBFD4782B6977B900F58F19 /* FavoriteData.xcdatamodeld */,
+				2BBFD47C2B69783900F58F19 /* FavoriteDataModel.swift */,
 				2B990C2D2AFA686A008E3C70 /* HomeData.swift */,
 				2B990C322AFAA78A008E3C70 /* HomeService.swift */,
 			);
@@ -358,6 +361,17 @@
 				2BBB1FA42B0528DC002D400D /* DetailsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BBFD47B2B6977CD00F58F19 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				2B84953F2AE82AFE00473818 /* SceneDelegate.swift */,
+				2B84953D2AE82AFE00473818 /* AppDelegate.swift */,
+				2B8495462AE82B0100473818 /* Assets.xcassets */,
+				2B8495482AE82B0100473818 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +458,7 @@
 				2BBB1FA52B0528DC002D400D /* DetailsViewModel.swift in Sources */,
 				2B84953E2AE82AFE00473818 /* AppDelegate.swift in Sources */,
 				2BBFD4772B6976E000F58F19 /* UIViewController + Extension.swift in Sources */,
+				2BBFD47D2B69783900F58F19 /* FavoriteDataModel.swift in Sources */,
 				2B2E66B32AED8EF200C70F27 /* ProductsTableViewCell.swift in Sources */,
 				2B8495402AE82AFE00473818 /* SceneDelegate.swift in Sources */,
 				2B8F782A2B03E61600BCDFDB /* FavoritesViewModel.swift in Sources */,
@@ -457,6 +472,7 @@
 				2B9011392AEC3A08005000DD /* UIColor - Extension.swift in Sources */,
 				2B8F78252B0398C900BCDFDB /* FavoritesViewController.swift in Sources */,
 				2B2E66AF2AED8EC400C70F27 /* FilterCollectionViewCell.swift in Sources */,
+				2BBFD47A2B6977B900F58F19 /* FavoriteData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +685,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2BBFD4782B6977B900F58F19 /* FavoriteData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2BBFD4792B6977B900F58F19 /* FavoriteData.xcdatamodel */,
+			);
+			currentVersion = 2BBFD4792B6977B900F58F19 /* FavoriteData.xcdatamodel */;
+			path = FavoriteData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2B8495322AE82AFE00473818 /* Project object */;
 }
