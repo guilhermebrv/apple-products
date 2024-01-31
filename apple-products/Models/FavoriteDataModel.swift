@@ -24,6 +24,19 @@ class FavoriteDataModel {
 			return nil
 		}
 	}
+	
+	public func cleanSavedData() {
+		do {
+			let savedItems = try context.fetch(Device.fetchRequest())
+			for item in savedItems {
+				context.delete(item as NSManagedObject)
+			}
+			try context.save()
+			print("all core data was eliminated")
+		} catch {
+			print("error cleaning data: \(error.localizedDescription)")
+		}
+	}
 
 	public func saveFavorite(product: ProductsList) {
 		newFavorite = Device(context: context)
@@ -32,6 +45,7 @@ class FavoriteDataModel {
 		newFavorite?.startingPrice = product.startingPrice
 		newFavorite?.chipImage = product.chipImage
 		newFavorite?.productImage = product.productImage
+		newFavorite?.buyLink = product.buyLink
 		do {
 			try context.save()
 		} catch {

@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		FavoriteDataModel.shared.cleanSavedData()
         navigationController?.isNavigationBarHidden = true
         signProtocols()
 		dismissKeyBoard()
