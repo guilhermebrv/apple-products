@@ -22,7 +22,6 @@ protocol DetailsViewControllerProtocol: AnyObject {
 }
 
 class DetailsViewController: UIViewController {
-    
     weak var delegate: DetailsViewControllerProtocol?
     private var screen: DetailsView?
     private var viewModel: DetailsViewModel
@@ -51,33 +50,35 @@ class DetailsViewController: UIViewController {
             self.delegate?.modalViewControllerDidDismiss()
         }
     }
-        
-    private func signProtocols() {
-        screen?.delegateTableView(delegate: self, dataSource: self)
-        screen?.delegate(delegate: self)
-    }
-    
-    private func setProductNameAndType() {
-        screen?.productLabel.text = viewModel.product.productName
-        switch productTypes(rawValue: viewModel.product.type ?? 0) {
-        case .mac:
-            screen?.productTypeLabel.text = "Mac"
-        case .ipad:
-            screen?.productTypeLabel.text = "iPad"
-        case .iphone:
-            screen?.productTypeLabel.text = "iPhone"
-        case .watch:
-            screen?.productTypeLabel.text = "Watch"
-        case .vision:
-            screen?.productTypeLabel.text = "Vision"
-        case .airpods:
-            screen?.productTypeLabel.text = "Airpods"
-        case .tvhome:
-            screen?.productTypeLabel.text = "TV & Home"
-        default:
-            return
-        }
-    }
+}
+
+extension DetailsViewController {
+	private func signProtocols() {
+		screen?.delegateTableView(delegate: self, dataSource: self)
+		screen?.delegate(delegate: self)
+	}
+	
+	private func setProductNameAndType() {
+		screen?.productLabel.text = viewModel.product.productName
+		switch productTypes(rawValue: viewModel.product.type ?? 0) {
+		case .mac:
+			screen?.productTypeLabel.text = "Mac"
+		case .ipad:
+			screen?.productTypeLabel.text = "iPad"
+		case .iphone:
+			screen?.productTypeLabel.text = "iPhone"
+		case .watch:
+			screen?.productTypeLabel.text = "Watch"
+		case .vision:
+			screen?.productTypeLabel.text = "Vision"
+		case .airpods:
+			screen?.productTypeLabel.text = "Airpods"
+		case .tvhome:
+			screen?.productTypeLabel.text = "TV & Home"
+		default:
+			return
+		}
+	}
 }
 
 extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -91,7 +92,6 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.setupCell(product: viewModel.product, delegate: self)
         if viewModel.isProductFavorited(product: viewModel.product) {
             cell?.productIsFavorited()
-            // for testing // print("product is favorited")
         }
         return cell ?? UITableViewCell()
     }
@@ -103,12 +103,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension DetailsViewController: DetailsTableViewViewProtocol {
     func tappedFavoritesButton() {
-        if viewModel.isProductFavorited(product: viewModel.product) {
-            viewModel.removeFromFavoritesData(data: viewModel.product)
-        } else {
-            viewModel.saveFavoriteToData(data: viewModel.product)
-        }
-        // for testing // viewModel.printAllStoredData()
+		viewModel.isProductFavorited(product: viewModel.product) ? viewModel.removeFromFavoritesData(data: viewModel.product) : viewModel.saveFavoriteToData(data: viewModel.product)
     }
     
     func buttonOpenURL(url: String) {

@@ -14,11 +14,24 @@ class FavoriteDataModel {
 	var newFavorite: Device?
 	
 	private init() { }
+	
+	public func getSavedData() -> [Device]? {
+		do {
+			let savedItems = try context.fetch(Device.fetchRequest())
+			return savedItems
+		} catch {
+			print("error fetching data: \(error.localizedDescription)")
+			return nil
+		}
+	}
 
 	public func saveFavorite(product: ProductsList) {
 		newFavorite = Device(context: context)
 		context.insert(newFavorite ?? Device())
-		newFavorite?.name = product.productName
+		newFavorite?.productName = product.productName
+		newFavorite?.startingPrice = product.startingPrice
+		newFavorite?.chipImage = product.chipImage
+		newFavorite?.productImage = product.productImage
 		do {
 			try context.save()
 		} catch {
@@ -26,12 +39,18 @@ class FavoriteDataModel {
 		}
 	}
 	
-	public func removeFavorite() {
-		context.delete(newFavorite ?? Device())
+	public func removeFavorite(toRemove: ProductsList) {
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Device")
+		fetchRequest.predicate = NSPredicate(format: "buyLink == %@", toRemove.buyLink ?? "")
+		
 		do {
-			try context.save()
+			let results = try context.fetch(fetchRequest) as? [Device]
+			if let deviceToDelete = results?.first {
+				context.delete(deviceToDelete)
+				try context.save()
+			}
 		} catch {
-			print("error removing favorite: \(error.localizedDescription)")
+			print("Error removing favorite: \(error.localizedDescription)")
 		}
 	}
 }

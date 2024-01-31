@@ -29,11 +29,13 @@ class HomeViewController: UIViewController {
 		dismissKeyBoard()
         viewModel.fetchRequest()
     }
-    
-    private func signProtocols() {
-        viewModel.delegate(delegate: self)
-        screen?.delegateSearchBar(delegate: self)
-    }
+}
+
+extension HomeViewController {
+	private func signProtocols() {
+		viewModel.delegate(delegate: self)
+		screen?.delegateSearchBar(delegate: self)
+	}
 }
 
 extension HomeViewController: HomeViewModelProtocol {

@@ -8,16 +8,17 @@
 import UIKit
 
 class DetailsViewModel {
-    
     let product: ProductsList
     let tableScreen: DetailsTableViewView = DetailsTableViewView()
     
     init(product: ProductsList) {
         self.product = product
     }
+	
     public var numberOfRowsInSection: Int {
         return 1
     }
+	
     public func heightForRowAt(width: CGFloat) -> CGFloat {
         var chipImage: CGFloat = 0
         if product.chipImage != "" {
@@ -31,50 +32,17 @@ class DetailsViewModel {
         return 380 + chipImage + specs + detailedSpecs + price
     }
     
-    // MARK: Adding, reading and removing products from Favorites Data
+    // MARK: Reading, adding and removing products from CoreData
+	public func isProductFavorited(product: ProductsList) -> Bool {
+		return FavoriteDataModel.shared.getSavedData()?.contains(where: { $0.buyLink == product.buyLink }) ?? false
+    }
+	
 	public func saveFavoriteToData(data: ProductsList) {
-        var savedProducts = readFavoritesData() ?? []
-        if !savedProducts.contains(where: { $0.buyLink == data.buyLink }) {
-            savedProducts.append(data)
-            if let encoded = try? encoder.encode(savedProducts) {
-                defaults.set(encoded, forKey: "SavedProducts")
-            }
-        }
-    }
-    
-    public func readFavoritesData() -> [ProductsList]? {
-        if let savedProducts = defaults.object(forKey: "SavedProducts") as? Data {
-            if let loadedProducts = try? decoder.decode([ProductsList].self, from: savedProducts) {
-                return loadedProducts
-            }
-        }
-        return nil
-    }
-    
-    public func isProductFavorited(product: ProductsList) -> Bool {
-        if let favorites = readFavoritesData(), favorites.contains(where: { $0.buyLink == product.buyLink }) {
-            return true
-        } else {
-            return false
-        }
-    }
+		FavoriteDataModel.shared.saveFavorite(product: data)
+	}
+
     
     public func removeFromFavoritesData(data: ProductsList) {
-        var savedProducts = readFavoritesData() ?? []
-        if savedProducts.contains(where: { $0.buyLink == data.buyLink }) {
-            savedProducts.removeAll(where: { $0.buyLink == data.buyLink })
-            if let encoded = try? encoder.encode(savedProducts) {
-                defaults.set(encoded, forKey: "SavedProducts")
-            }
-        }
+		FavoriteDataModel.shared.removeFavorite(toRemove: data)
     }
-        
-    /*
-    public func printAllStoredData() {
-        if let allFavorites = readFavoritesData() {
-            for product in allFavorites {
-                print(product.productName ?? "")
-            }
-        }
-    }*/
 }

@@ -55,4 +55,33 @@ class ProductsTableViewCell: UITableViewCell {
         screen.productLabel.text = data.productName
         screen.startingPriceLabel.text = data.startingPrice
     }
+	
+	public func setupFavoritesCell(data: Device) {
+		if let urlProduct: URL = URL(string: data.productImage ?? "") {
+			URLSession.shared.dataTask(with: urlProduct) { data, response, error in
+				if error != nil {
+					return
+				}
+				if let data = data, let image = UIImage(data: data) {
+					DispatchQueue.main.async {
+						self.screen.productImageView.image = image
+					}
+				}
+			}.resume()
+		}
+		if let urlChip: URL = URL(string: data.chipImage ?? "") {
+			URLSession.shared.dataTask(with: urlChip) { data, response, error in
+				if error != nil {
+					return
+				}
+				if let data = data, let image = UIImage(data: data) {
+					DispatchQueue.main.async {
+						self.screen.chipImage.image = image
+					}
+				}
+			}.resume()
+		}
+		screen.productLabel.text = data.productName
+		screen.startingPriceLabel.text = data.startingPrice
+	}
 }

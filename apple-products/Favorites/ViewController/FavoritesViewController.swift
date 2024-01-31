@@ -27,10 +27,12 @@ class FavoritesViewController: UIViewController {
         screen?.backgroundColor = UIColor.whiteApple
         signProtocols()
     }
-    
-    private func signProtocols() {
-        screen?.delegateTableView(delegate: self, dataSource: self)
-    }
+}
+
+extension FavoritesViewController {
+	private func signProtocols() {
+		screen?.delegateTableView(delegate: self, dataSource: self)
+	}
 }
 
 extension FavoritesViewController: DetailsViewControllerProtocol {
@@ -52,7 +54,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier, for: indexPath) as? ProductsTableViewCell
         cell?.selectionStyle = .none
-        cell?.setupCell(data: viewModel.loadCurrentFavoriteCell(indexPath: indexPath))
+        cell?.setupFavoritesCell(data: viewModel.loadCurrentFavoriteCell(indexPath: indexPath))
         return cell ?? UITableViewCell()
     }
     
@@ -61,7 +63,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let modal = DetailsViewController(product: viewModel.loadCurrentFavoriteCell(indexPath: indexPath))
+        let modal = DetailsViewController(product: viewModel.loadCurrentFavoriteCellModal(indexPath: indexPath))
         modal.delegate = self
         present(modal, animated: true, completion: nil)
     }

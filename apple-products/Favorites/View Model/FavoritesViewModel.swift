@@ -8,19 +8,8 @@
 import UIKit
 
 class FavoritesViewModel {
-    
-    // MARK: Reading favorites' data
-    let encoder = JSONEncoder()
-    let decoder = JSONDecoder()
-    let defaults = UserDefaults.standard
-    
-    public func readFavoritesData() -> [ProductsList]? {
-        if let savedProducts = defaults.object(forKey: "SavedProducts") as? Data {
-            if let loadedProducts = try? decoder.decode([ProductsList].self, from: savedProducts) {
-                return loadedProducts
-            }
-        }
-        return nil
+    public func readFavoritesData() -> [Device]? {
+		return FavoriteDataModel.shared.getSavedData()
     }
     
     // MARK: Table View Aux
@@ -33,11 +22,21 @@ class FavoritesViewModel {
         return 390
     }
     
-    public func loadCurrentFavoriteCell(indexPath: IndexPath) -> ProductsList {
+    public func loadCurrentFavoriteCell(indexPath: IndexPath) -> Device {
         if let favoriteProducts = readFavoritesData(), favoriteProducts.isEmpty == false {
             return favoriteProducts[indexPath.row]
         } else {
-            return ProductsList()
+            return Device()
         }
     }
+	
+	public func loadCurrentFavoriteCellModal(indexPath: IndexPath) -> ProductsList {
+		if let favoriteProducts = readFavoritesData(), favoriteProducts.isEmpty == false {
+			let favorite = favoriteProducts[indexPath.row]
+			let product = ProductsList(productName: favorite.productName, chipImage: favorite.productImage, productImage: favorite.chipImage, startingPrice: favorite.startingPrice, buyLink: favorite.buyLink, specs: favorite.specs, detailedSpecs: favorite.detailedSpecs)
+			return product
+		} else {
+			return ProductsList()
+		}
+	}
 }
