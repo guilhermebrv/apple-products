@@ -46,6 +46,8 @@ class FavoriteDataModel {
 		newFavorite?.chipImage = product.chipImage
 		newFavorite?.productImage = product.productImage
 		newFavorite?.buyLink = product.buyLink
+		newFavorite?.specs = product.specs
+		newFavorite?.detailedSpecs = product.detailedSpecs
 		do {
 			try context.save()
 		} catch {

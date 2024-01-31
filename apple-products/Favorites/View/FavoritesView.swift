@@ -84,7 +84,6 @@ class FavoritesView: UIView {
             noFavoritesLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             noFavoritesLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
-            
             favoritesTableView.topAnchor.constraint(equalTo: sectionNameLabel.bottomAnchor, constant: 25),
             favoritesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             favoritesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
