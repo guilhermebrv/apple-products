@@ -33,7 +33,7 @@ class FavoritesViewModel {
 	public func loadCurrentFavoriteCellModal(indexPath: IndexPath) -> ProductsList {
 		if let favoriteProducts = readFavoritesData(), favoriteProducts.isEmpty == false {
 			let favorite = favoriteProducts[indexPath.row]
-			let product = ProductsList(productName: favorite.productName, chipImage: favorite.productImage, productImage: favorite.chipImage, startingPrice: favorite.startingPrice, buyLink: favorite.buyLink, specs: favorite.specs, detailedSpecs: favorite.detailedSpecs)
+			let product = ProductsList(productName: favorite.productName, chipImage: favorite.chipImage, productImage: favorite.productImage, startingPrice: favorite.startingPrice, buyLink: favorite.buyLink, specs: favorite.specs, detailedSpecs: favorite.detailedSpecs)
 			return product
 		} else {
 			return ProductsList()
