@@ -23,7 +23,7 @@ class ProductsTableViewCellView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "apple-bg") // FOR TESTING
+        imageView.image = nil
         return imageView
     }()
     

@@ -30,6 +30,15 @@ class HomeView: UIView {
         label.textColor = .black
         return label
     }()
+	
+	lazy var spinner: UIActivityIndicatorView = {
+		let spinner = UIActivityIndicatorView(style: .large)
+		spinner.translatesAutoresizingMaskIntoConstraints = false
+		spinner.center = superview?.center ?? CGPoint()
+		spinner.color = .lightGray
+		spinner.hidesWhenStopped = true
+		return spinner
+	}()
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -96,6 +105,7 @@ class HomeView: UIView {
         addSubview(searchBar)
         addSubview(filterCollectionView)
         addSubview(productsTableView)
+		productsTableView.addSubview(spinner)
     }
     
     private func configConstraints() {
@@ -104,6 +114,9 @@ class HomeView: UIView {
             logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             logoImageView.heightAnchor.constraint(equalToConstant: 32),
             logoImageView.widthAnchor.constraint(equalToConstant: 28),
+			
+			spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
+			spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             sectionNameLabel.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: -2),
             sectionNameLabel.leadingAnchor.constraint(equalTo: logoImageView.trailingAnchor, constant: 10),

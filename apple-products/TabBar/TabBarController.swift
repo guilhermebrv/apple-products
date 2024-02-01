@@ -25,10 +25,10 @@ class TabBarController: UITabBarController {
         
         tabBar.isTranslucent = false
         tabBar.tintColor = .white
-        tabBar.unselectedItemTintColor = .blue
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
-        
+		tabBar.unselectedItemTintColor = .black
+		        
         guard let items = tabBar.items else { return }
         items[0].image = UIImage(systemName: "magnifyingglass")
         items[0].title = "Products"

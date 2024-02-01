@@ -24,8 +24,8 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		FavoriteDataModel.shared.cleanSavedData()
         navigationController?.isNavigationBarHidden = true
+		screen?.spinner.startAnimating()
         signProtocols()
 		dismissKeyBoard()
         viewModel.fetchRequest()
@@ -45,6 +45,7 @@ extension HomeViewController: HomeViewModelProtocol {
             self.screen?.delegateCollectionView(delegate: self, dataSource: self)
             self.screen?.delegateTableView(delegate: self, dataSource: self)
             self.screen?.productsTableView.reloadData()
+			self.screen?.spinner.stopAnimating()
         }
     }
     
@@ -81,10 +82,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         viewModel.setFilter(indexPath: indexPath, searchText: screen?.searchBar.text ?? "")
         screen?.filterCollectionView.reloadData()
         screen?.filterCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        screen?.productsTableView.reloadData()
-        if viewModel.numberOfRowsInSection > 0 {
-            screen?.productsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        }
+		screen?.productsTableView.reloadData()
+		if viewModel.numberOfRowsInSection > 0 {
+			screen?.productsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+		}
     }
 }
 
